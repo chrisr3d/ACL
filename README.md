@@ -1,4 +1,7 @@
--LESQUOY Baptiste
--STUDER Christian
--TOUCHENE Mohamed Amine
--WEISSENBACH Nicolas
+LESQUOY Baptiste
+
+STUDER Christian
+
+TOUCHENE Mohamed Amine
+
+WEISSENBACH Nicolas
