@@ -17,4 +17,11 @@ public abstract class GameObject {
 
     abstract public void draw();
 
+    public int x(){
+        return x;
+    }
+    public int y(){
+        return y;
+    }
+
 }
