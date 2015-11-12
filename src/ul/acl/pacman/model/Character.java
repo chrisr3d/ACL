@@ -1,5 +1,7 @@
 package ul.acl.pacman.model;
 
+import ul.acl.pacman.model.*;
+
 /**
  * Created by baptiste on 11/11/15.
  */
