@@ -1,16 +1,20 @@
-/**
- * 
- */
 package ul.acl.pacman.model;
 
 /**
- * @author Nicolas
- *
+ * Created by baptiste on 11/11/15.
  */
 public abstract class GameObject {
 
-	public abstract void update();
 
+    public int x, y;
 
-	public abstract void draw();
+    public GameObject(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+
+    abstract public void update();
+
+    abstract public void draw();
+
 }
