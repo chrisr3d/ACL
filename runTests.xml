@@ -24,14 +24,14 @@
 	</target>
 	
 	<!-- Creates the build, docs and dist directory-->
-	<target name="makedir">
+	<target name="prepare">
 		<mkdir dir="${build.dir}" />
 		<!-- <mkdir dir="${build.test.dir}" /> -->
 		<mkdir dir="${test.report.dir}" />
 	</target>
 	
 	<!-- Compiles the java code (including the usage of library for JUnit -->
-	<target name="compile" depends="clean, makedir">
+	<target name="compile" depends="clean, prepare">
 		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="true">
 			<classpath refid="junit.class.path" />
 		</javac>
