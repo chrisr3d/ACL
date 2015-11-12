@@ -5,7 +5,7 @@
 	<property name="src.dir" location="src" />
 	<property name="test.dir" location="tests" />
 	<property name="build.dir" location="bin" />
-	<property name="build.test.dir" location="bin/tests" />
+	<property name="build.test.dir" location="bin" />
 	
 	<!-- Variables used for JUnit testin -->
 	<property name="test.report.dir" location="testreport" />
@@ -32,10 +32,10 @@
 	
 	<!-- Compiles the java code (including the usage of library for JUnit -->
 	<target name="compile" depends="clean, makedir">
-		<javac srcdir="${src.dir}" destdir="${build.dir}">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="true">
 			<classpath refid="junit.class.path" />
 		</javac>
-		<javac srcdir="${test.dir}" destdir="${build.dir}">
+		<javac srcdir="${test.dir}" destdir="${build.dir}" includeantruntime="true">
 			<classpath refid="junit.class.path" />
 		</javac>
 	</target>
@@ -49,7 +49,7 @@
 					<pathelement location="${build.test.dir}"/>
 				</classpath>
 			<formatter type="xml" />
-			<batchtest todir="${test.report.dir}">
+			<batchtest >
 				<fileset dir="${test.dir}">
 					<include name="**/*Test*.java" />
 				</fileset>
