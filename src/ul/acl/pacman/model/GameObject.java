@@ -13,7 +13,7 @@ public abstract class GameObject {
         this.y = y;
     }
 
-    abstract public void update();
+    abstract public void update(LevelManager levelManager);
 
     abstract public void draw();
 

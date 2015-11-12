@@ -9,6 +9,11 @@ public class Hero extends Playable{
         super(x, y);
     }
 
+	@Override
+	public void update(LevelManager levelManager) {
+		levelManager.updateCharacter(this);
+	}
+
 
 
 }
