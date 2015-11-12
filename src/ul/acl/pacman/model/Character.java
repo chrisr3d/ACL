@@ -9,6 +9,7 @@ public abstract class Character extends GameObject {
 
     public Character(int x, int y){
         super(x,y);
+        
     }
 
     public void move(Direction d) throws Exception {
