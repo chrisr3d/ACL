@@ -1,27 +1,21 @@
 package ul.acl.pacman.model;
 
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
 
 public class TestCharacter {
 
 
     @Test
-    public void moveLeft(){
-        ul.acl.pacman.model.Hero h ;
-        h = new ul.acl.pacman.model.Hero(0,0);
-        try {
-            h.move(Direction.left);
-        }catch (Exception e){
 
-        }
-            assertEquals(h.x(), -1);
+    public void moveLeft() throws Exception{
+        Hero h = new Hero(0,0);
+        h.move(Direction.left);
+        assertEquals(h.x(), -1);
     }
 
     @Test
-    public void moveRight(){
+    public void moveRight() throws Exception{
         Hero h = new Hero(0,0);
         try {
             h.move(Direction.right);
@@ -33,7 +27,7 @@ public class TestCharacter {
 
 
     @Test
-    public void moveUp(){
+    public void moveUp() throws Exception{
         Hero h = new Hero(0,0);
         try {
             h.move(Direction.up);
@@ -45,7 +39,7 @@ public class TestCharacter {
 
 
     @Test
-    public void moveDown(){
+    public void moveDown() throws Exception{
         Hero h = new Hero(0,0);
         try {
             h.move(Direction.down);
@@ -58,7 +52,7 @@ public class TestCharacter {
 
 
     @Test
-    public void moveLeftNegatif(){
+    public void moveLeftNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         try {
             h.move(Direction.left);
@@ -69,7 +63,7 @@ public class TestCharacter {
     }
 
     @Test
-    public void moveRightNegatif(){
+    public void moveRightNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         try {
             h.move(Direction.right);
@@ -80,7 +74,7 @@ public class TestCharacter {
 
 
     @Test
-    public void moveUpNegatif(){
+    public void moveUpNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         try {
             h.move(Direction.up);
@@ -92,7 +86,7 @@ public class TestCharacter {
 
 
     @Test
-    public void moveDownNegatif(){
+    public void moveDownNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         try {
             h.move(Direction.down);
