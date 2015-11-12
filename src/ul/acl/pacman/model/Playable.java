@@ -10,14 +10,7 @@ public abstract class Playable extends Character {
         super(x, y);
     }
 
-    public void update(){
-        try {
-            move(Direction.left);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    @Override
     public void draw(){
         System.out.println(x + " " + y);
 

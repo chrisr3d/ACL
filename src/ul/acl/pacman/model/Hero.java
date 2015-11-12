@@ -16,14 +16,8 @@ public class Hero extends Playable{
 
 	@Override
 	public void update(LevelManager levelManager) {
-		levelManager.updateCharacter(this);
+		levelManager.updateHero(this);
 	}
-
-
-    @Override
-    public void update(){
-
-    }
 
 
 
