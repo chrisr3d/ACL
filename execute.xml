@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="simpleCompile" default="execute" basedir=".">
+	
+   <target name="init">
+      <property name="sourceDir" value="src" />
+      <property name="outputDir" value="bin" />
+      <!-- <property name="deployJSP" value="/web/deploy/jsp" /> !-->
+      <!-- <property name="deployProperties" value="/web/deploy/conf" /> !-->
+   </target>
+	
+   <target name="clean" depends="init">
+      <delete dir="${outputDir}" />
+   </target>
+	
+   <target name="prepare" depends="clean">
+      <mkdir dir="${outputDir}" />
+   </target>
+	
+   <target name="compile" depends="prepare">
+     <javac srcdir="${sourceDir}" destdir="${outputDir}" />
+   </target>
+	
+	<target name="execute" depends="compile">
+		<java classname="ul.acl.pacman.PacmanGame" classpath="./${outputDir}/"/>
+	</target>
+	
+</project>
