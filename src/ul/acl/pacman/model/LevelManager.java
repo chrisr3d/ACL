@@ -4,15 +4,15 @@ import ul.acl.pacman.model.maze.Maze;
 
 public class LevelManager {
 	
-	protected Character character;
+	protected Hero hero;
 	
 	protected Maze maze;
 	
 	public LevelManager () {
-		this.character = new Character();
+		this.hero = new Hero(10, 10);
 	}
 	
-	public void updateCharacter(Character c) {
-		c.update(maze);
+	public void updateCharacter(Hero h) {
+		h.update();
 	}
 }
