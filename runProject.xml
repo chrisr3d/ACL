@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="simpleCompile" default="execute" basedir=".">
+<project name="runProject" default="execute" basedir=".">
 	
    <target name="init">
       <property name="sourceDir" value="src" />
