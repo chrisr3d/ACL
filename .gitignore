@@ -7,6 +7,10 @@ tmp/
 *.bak
 *.swp
 *~.nib
+.idea/
+*.iml
+out/
+
 local.properties
 .settings/
 .loadpath
@@ -37,5 +41,8 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+<<<<<<< HEAD
 
 .DS_Store
+=======
+>>>>>>> f4f5339346bd3494c718f08dc311fb1de7d52c09
