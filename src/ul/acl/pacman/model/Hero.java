@@ -7,10 +7,8 @@ import ul.acl.pacman.controller.ControllerListener;
  */
 public class Hero extends Playable{
 
-    ControllerListener l;
     public Hero(int x, int y){
         super(x, y);
-        l = new ControllerListener();
 
     }
 
