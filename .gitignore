@@ -41,8 +41,12 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
-<<<<<<< HEAD
 
+# Parce que nicolas utilise un Mac
 .DS_Store
-=======
->>>>>>> f4f5339346bd3494c718f08dc311fb1de7d52c09
+
+# Parce que c'est pas la peine d'avoir la lib
+lib/*
+
+# Pas la peine de se trimbaler le fichier de log tout le temps...
+testreport/
