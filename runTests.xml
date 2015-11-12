@@ -26,7 +26,7 @@
 	<!-- Creates the build, docs and dist directory-->
 	<target name="makedir">
 		<mkdir dir="${build.dir}" />
-		<mkdir dir="${build.test.dir}" />
+		<!-- <mkdir dir="${build.test.dir}" /> -->
 		<mkdir dir="${test.report.dir}" />
 	</target>
 	
@@ -35,7 +35,7 @@
 		<javac srcdir="${src.dir}" destdir="${build.dir}">
 			<classpath refid="junit.class.path" />
 		</javac>
-		<javac srcdir="${test.dir}" destdir="${build.test.dir}">
+		<javac srcdir="${test.dir}" destdir="${build.dir}">
 			<classpath refid="junit.class.path" />
 		</javac>
 	</target>
