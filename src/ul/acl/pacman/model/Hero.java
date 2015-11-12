@@ -15,6 +15,11 @@ public class Hero extends Playable{
     }
 
 
+    @Override
+    public void update(){
+
+    }
+
 
 
 
