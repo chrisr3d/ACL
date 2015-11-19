@@ -1,5 +1,7 @@
 package ul.acl.pacman.engine;
 
+import ul.acl.pacman.controller.GameController;
+
 /**
  * @author Horatiu Cirstea, Vincent Thomas
  *
@@ -59,7 +61,7 @@ public class GameEngineGraphical {
 			// demande controle utilisateur
 			Cmd c = this.gameController.getCommand();
 			// fait evoluer le game
-			this.game.evolve(c);
+			this.game.update(c);
 			// affiche le game
 			this.gui.paint();
 			// met en attente

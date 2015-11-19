@@ -1,4 +1,4 @@
-package ul.acl.pacman.model;
+package ul.acl.pacman.model.character;
 
 import ul.acl.pacman.model.*;
 

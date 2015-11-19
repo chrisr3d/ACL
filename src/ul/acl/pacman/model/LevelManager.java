@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import java.io.BufferedReader;
 

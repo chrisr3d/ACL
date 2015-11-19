@@ -1,6 +1,8 @@
-package ul.acl.pacman.engine;
+package ul.acl.pacman.controller;
 
 import java.awt.event.KeyListener;
+
+import ul.acl.pacman.engine.Cmd;
 
 /**
  * @author Horatiu Cirstea
