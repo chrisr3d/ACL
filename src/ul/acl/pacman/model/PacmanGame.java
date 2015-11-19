@@ -40,7 +40,7 @@ public class PacmanGame implements Game {
 	 * @param commande
 	 */
 	@Override
-	public void evolve(Cmd commande) {
+	public void update(Cmd commande) {
 		System.out.println("Execute "+commande);
 	}
 

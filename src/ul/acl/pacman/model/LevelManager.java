@@ -1,15 +1,16 @@
 package ul.acl.pacman.model;
 
-import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import ul.acl.pacman.engine.Cmd;
+import ul.acl.pacman.engine.Game;
 import ul.acl.pacman.model.maze.Maze;
-import java.io.BufferedReader;
 
-public class LevelManager implements UpdateInterface{
+public class LevelManager implements Game{
 	
 	protected List<GameObject> characters;
 	
@@ -33,13 +34,8 @@ public class LevelManager implements UpdateInterface{
 
 	}
 
-	public void update() {
-		for(GameObject gO : characters)
-			gO.update(this);
-		maze.update(this);
-	}
-	
-	@Override
+
+
 	public void updateHero(Hero h) {
 		System.out.println("choisir une direction: q/s/d/z:");
 		BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
@@ -74,9 +70,25 @@ public class LevelManager implements UpdateInterface{
 		}
 	}
 
-	@Override
 	public void updateMaze(Maze m) {
 		// TODO Auto-generated method stub
+	}
+
+
+
+	@Override
+	public void update(Cmd userCmd) {
+		for(GameObject gO : characters)
+			gO.update(this);
+		maze.update(this);
+	}
+
+
+
+	@Override
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -1,5 +1,9 @@
 package ul.acl.pacman.engine;
 
+import ul.acl.pacman.model.Hero;
+import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.maze.Maze;
+
 /**
  * @author Horatiu Cirstea, Vincent Thomas
  *
@@ -56,14 +60,26 @@ public class GameEngineGraphical {
 
 		// boucle de game
 		while (!this.game.isFinished()) {
-			// demande controle utilisateur
-			Cmd c = this.gameController.getCommand();
-			// fait evoluer le game
-			this.game.evolve(c);
-			// affiche le game
-			this.gui.paint();
-			// met en attente
-			Thread.sleep(100);
+			
+			LevelManager l = new LevelManager(new Maze(0,0));
+			l.addCharacter(new Hero(0,0));
+			while (true){
+				
+				// demande controle utilisateur
+				Cmd c = this.gameController.getCommand();
+				// fait evoluer le game
+				this.game.update(c);
+				// affiche le game
+				this.gui.paint();
+				// met en attente
+				
+				l.update(c);
+				l.draw();
+				Thread.sleep(100);
+				
+			}
+
+		
 		}
 	}
 
