@@ -2,6 +2,8 @@ package ul.acl.pacman.engine;
 
 import javax.swing.JFrame;
 
+import ul.acl.pacman.controller.GameController;
+
 
 /**
  * @author Horatiu Cirstea, Vincent Thomas

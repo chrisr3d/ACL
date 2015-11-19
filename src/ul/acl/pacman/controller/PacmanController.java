@@ -1,9 +1,8 @@
-package ul.acl.pacman.model;
+package ul.acl.pacman.controller;
 
 import java.awt.event.KeyEvent;
 
 import ul.acl.pacman.engine.Cmd;
-import ul.acl.pacman.engine.GameController;
 
 
 

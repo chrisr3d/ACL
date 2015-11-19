@@ -1,5 +1,6 @@
 package ul.acl.pacman.model;
 
+import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 
 public interface UpdateInterface {

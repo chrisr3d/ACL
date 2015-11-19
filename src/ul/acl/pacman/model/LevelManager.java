@@ -8,6 +8,8 @@ import java.util.List;
 
 import ul.acl.pacman.engine.Cmd;
 import ul.acl.pacman.engine.Game;
+import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 
 public class LevelManager implements Game{
@@ -15,10 +17,13 @@ public class LevelManager implements Game{
 	protected List<GameObject> characters;
 	
 	protected Maze maze;
+	private Cmd cmd;
+	
 	
 	public LevelManager (Maze m) {
 		this.maze = m;
 		characters = new ArrayList<GameObject>();
+		this.cmd = null;
 	}
 
 
@@ -37,30 +42,29 @@ public class LevelManager implements Game{
 
 
 	public void updateHero(Hero h) {
+		/*
 		System.out.println("choisir une direction: q/s/d/z:");
 		BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
+		*/
 		try {
-			String s = b.readLine();
+			//String s = b.readLine();
 			Direction d = null;
-			switch (s){
-				case "q":
+			switch (this.cmd){
+				case LEFT:
 					d = Direction.left;
 					break;
-				case "d":
+				case RIGHT:
 					d = Direction.right;
 					break;
-				case "s":
+				case DOWN:
 					d = Direction.down;
 					break;
-				case "z":
+				case UP:
 					d = Direction.up;
 					break;
 			}
 			if(d != null) {
 				h.move(d);
-			}
-			else{
-				System.out.println("mauvaise direction");
 			}
 
 		} catch (IOException e) {
@@ -78,9 +82,11 @@ public class LevelManager implements Game{
 
 	@Override
 	public void update(Cmd userCmd) {
+		this.cmd = userCmd;
 		for(GameObject gO : characters)
 			gO.update(this);
 		maze.update(this);
+		
 	}
 
 
@@ -90,5 +96,7 @@ public class LevelManager implements Game{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	
 
 }

@@ -11,8 +11,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="ul.acl.pacman.model.Hero" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Hero.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="ul.acl.pacman.model.character.Hero" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Hero.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="916" y="692"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -38,8 +38,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="ul.acl.pacman.model.Playable" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Playable.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="ul.acl.pacman.model.character.Playable" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Playable.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="883" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -47,8 +47,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="ul.acl.pacman.model.Character" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Character.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="ul.acl.pacman.model.character.Character" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Character.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="868" y="300"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

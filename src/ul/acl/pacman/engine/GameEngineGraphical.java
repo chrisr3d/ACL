@@ -1,7 +1,8 @@
 package ul.acl.pacman.engine;
 
-import ul.acl.pacman.model.Hero;
+import ul.acl.pacman.controller.GameController;
 import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 
 /**
@@ -60,9 +61,8 @@ public class GameEngineGraphical {
 
 		// boucle de game
 		while (!this.game.isFinished()) {
-			
-			LevelManager l = new LevelManager(new Maze(0,0));
-			l.addCharacter(new Hero(0,0));
+
+			LevelManager l = new LevelManager(new Maze(0,0), new Hero(0,0));
 			while (true){
 				
 				// demande controle utilisateur
@@ -78,8 +78,6 @@ public class GameEngineGraphical {
 				Thread.sleep(100);
 				
 			}
-
-		
 		}
 	}
 
