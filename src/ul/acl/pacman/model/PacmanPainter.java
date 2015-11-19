@@ -37,7 +37,8 @@ public class PacmanPainter implements GamePainter {
 	public void draw(BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		crayon.setColor(Color.blue);
-		crayon.fillOval(0,0,10,10);
+		System.out.println(LevelManager.getInstance().hero.x);
+		crayon.fillOval(LevelManager.getInstance().hero.x,LevelManager.getInstance().hero.y ,10,10);
 	}
 
 	@Override

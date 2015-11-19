@@ -28,6 +28,7 @@ public class LevelManager implements Game{
 		this.cmd = null;
 		LevelManager.instance = this;
 		this.hero = h;
+		characters.add(hero);
 	}
 	
 	public static LevelManager getInstance() {
@@ -51,13 +52,11 @@ public class LevelManager implements Game{
 
 
 	public void updateHero(Hero h) {
-		/*
-		System.out.println("choisir une direction: q/s/d/z:");
-		BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
-		*/
+		System.out.println("update hero");
 		try {
 			//String s = b.readLine();
 			Direction d = null;
+			System.out.println(this.cmd);
 			switch (this.cmd){
 				case LEFT:
 					d = Direction.left;
@@ -71,8 +70,11 @@ public class LevelManager implements Game{
 				case UP:
 					d = Direction.up;
 					break;
+			default:
+				break;
 			}
 			if(d != null) {
+				System.out.println("je bouge");
 				h.move(d);
 			}
 
@@ -92,6 +94,7 @@ public class LevelManager implements Game{
 	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
+		System.out.println(userCmd);
 		for(GameObject gO : characters)
 			gO.update(this);
 		maze.update(this);
