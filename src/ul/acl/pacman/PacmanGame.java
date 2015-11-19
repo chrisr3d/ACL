@@ -7,6 +7,19 @@ import ul.acl.pacman.model.maze.Maze;
 
 public class PacmanGame {
 
+	/*
+	   // creation du jeu particulier et de son afficheur
+		PacmanGame game = new PacmanGame("helpFilePacman.txt");
+		PacmanPainter painter = new PacmanPainter();
+		PacmanController controller = new PacmanController();
+
+		// classe qui lance le moteur de jeu generique
+		GameEngineGraphical engine = new GameEngineGraphical(game, painter, controller);
+		engine.run();
+	 */
+	
+	
+	
 	/**
 	 * @param args
 	 */
