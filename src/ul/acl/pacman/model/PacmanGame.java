@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import ul.acl.pacman.engine.Cmd;
+import ul.acl.pacman.controller.Cmd;
 import ul.acl.pacman.engine.Game;
 
 /**

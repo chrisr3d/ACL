@@ -13,26 +13,37 @@ import java.io.BufferedReader;
 
 public class LevelManager implements UpdateInterface{
 	
+	public static LevelManager instance = null;
+	
 	protected List<GameObject> characters;
+	
+	protected Hero hero;
 	
 	protected Maze maze;
 	
-	public LevelManager (Maze m) {
+	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
 		characters = new ArrayList<GameObject>();
+		LevelManager.instance = this;
+		this.hero = h;
 	}
-
-
+	
+	public static LevelManager getInstance() {
+		return LevelManager.instance;
+	}
 
 	public void addCharacter(Character c){
 		characters.add(c);
+	}
+	
+	public Hero getHero() {
+		return this.hero;
 	}
 
 	public void draw(){
 		for(GameObject gO : characters)
 			gO.draw();
 		maze.draw();
-
 	}
 
 	public void update() {

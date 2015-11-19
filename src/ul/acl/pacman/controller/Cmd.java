@@ -1,4 +1,4 @@
-package ul.acl.pacman.engine;
+package ul.acl.pacman.controller;
 
 /**
  * @author Horatiu Cirstea

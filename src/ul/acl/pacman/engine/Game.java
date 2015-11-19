@@ -1,5 +1,7 @@
 package ul.acl.pacman.engine;
 
+import ul.acl.pacman.controller.Cmd;
+
 /**
  * @author Horatiu Cirstea, Vincent Thomas
  *
