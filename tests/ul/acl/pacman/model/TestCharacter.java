@@ -1,6 +1,9 @@
 package ul.acl.pacman.model;
 
 import org.junit.Test;
+
+import ul.acl.pacman.model.character.Hero;
+
 import static org.junit.Assert.assertEquals;
 
 public class TestCharacter {

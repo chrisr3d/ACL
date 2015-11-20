@@ -1,6 +1,7 @@
-package ul.acl.pacman.model;
+package ul.acl.pacman.model.character;
 
 import ul.acl.pacman.controller.ControllerListener;
+import ul.acl.pacman.model.LevelManager;
 
 /**
  * Created by baptiste on 11/11/15.

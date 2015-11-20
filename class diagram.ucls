@@ -2,82 +2,267 @@
 <class-diagram version="1.1.9" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
   router="FAN">  
-  <class id="1" language="java" name="ul.acl.pacman.model.GameObject" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="620" y="104"/>    
+  <class id="1" language="java" name="ul.acl.pacman.model.character.Hero" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Hero.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2943" y="1130"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="ul.acl.pacman.model.Hero" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Hero.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="916" y="692"/>    
+  <class id="2" language="java" name="ul.acl.pacman.model.character.Playable" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Playable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2957" y="817"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="ul.acl.pacman.model.LevelManager" project="acl2015_kzpkd" 
+  <class id="3" language="java" name="ul.acl.pacman.model.character.Character" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/character/Character.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="139" x="2885" y="581"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="4" language="java" name="ul.acl.pacman.controller.Cmd" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/controller/Cmd.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3372" y="573"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <interface id="5" language="java" name="ul.acl.pacman.controller.GameController" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/controller/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3139" y="-260"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="ul.acl.pacman.controller.ControllerListener" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/controller/ControllerListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="176" x="2243" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ul.acl.pacman.model.LevelManager" project="acl2015_kzpkd" 
     file="/acl2015_kzpkd/src/ul/acl/pacman/model/LevelManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="341" y="523"/>    
+    <position height="263" width="189" x="3040" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="ul.acl.pacman.model.maze.Maze" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/maze/Maze.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="238" x="220" y="232"/>    
+  <class id="8" language="java" name="ul.acl.pacman.engine.GameEngineGraphical" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/engine/GameEngineGraphical.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="357" x="2459" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="ul.acl.pacman.model.Playable" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Playable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="883" y="506"/>    
+  <interface id="9" language="java" name="ul.acl.pacman.engine.Game" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/engine/Game.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2939" y="-146"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="ul.acl.pacman.model.GameObject" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="177" x="2885" y="350"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="ul.acl.pacman.model.Character" project="acl2015_kzpkd" 
-    file="/acl2015_kzpkd/src/ul/acl/pacman/model/Character.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="868" y="300"/>    
+  <class id="11" language="java" name="ul.acl.pacman.engine.DrawingPanel" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/engine/DrawingPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="209" width="184" x="2254" y="581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="7">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="1"/>  
+  <class id="12" language="java" name="ul.acl.pacman.model.PacmanGame" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/PacmanGame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="144" x="2856" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="ul.acl.pacman.model.PacmanPainter" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/PacmanPainter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="167" x="2499" y="581"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="ul.acl.pacman.engine.GraphicalInterface" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/engine/GraphicalInterface.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="296" x="2142" y="350"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="ul.acl.pacman.engine.GamePainter" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/engine/GamePainter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="167" x="2459" y="830"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="16" language="java" name="ul.acl.pacman.model.UpdateInterface" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/model/UpdateInterface.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="158" x="2045" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="ul.acl.pacman.controller.PacmanController" project="acl2015_kzpkd" 
+    file="/acl2015_kzpkd/src/ul/acl/pacman/controller/PacmanController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="184" x="3279" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="18">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="19" name="characters"/>      
+      <multiplicity id="20" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="21">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="10"/>  
   </generalization>  
-  <generalization id="8">    
-    <end type="SOURCE" refId="2"/>    
+  <association id="23">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="24" name="panel"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="26">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <association id="27">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="28" name="gui"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="30">    
+    <bendpoint x="2765" y="-237"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="31" name="gameController"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="33">    
+    <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="5"/>  
+  </realization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
   </generalization>  
-  <generalization id="9">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <association id="10">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="11" name="maze">        
-        <position height="0" width="0" x="-19" y="63"/>      
-      </attribute>      
-      <multiplicity id="12" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-19" y="63"/>      
-      </multiplicity>    
+  <realization id="35">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <association id="36">    
+    <bendpoint x="3157" y="490"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="37" name="cmd"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="39">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="40" name="commandeEnCours"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <bendpoint x="2468" y="350"/>    
+    <bendpoint x="2468" y="581"/>    
+    <bendpoint x="2482" y="766"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="43" name="gamePainter"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <bendpoint x="2381" y="888"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="46" name="painter"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="49" name="game"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="52" name="instance"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
