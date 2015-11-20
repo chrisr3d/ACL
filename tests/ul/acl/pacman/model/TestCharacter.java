@@ -7,7 +7,6 @@ public class TestCharacter {
 
 
     @Test
-
     public void moveLeft() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.left);
