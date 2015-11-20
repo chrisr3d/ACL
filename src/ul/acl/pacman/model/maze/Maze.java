@@ -11,7 +11,6 @@ public class Maze extends GameObject{
 
 	public Maze(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean canMove(Character charactere, Direction direction) {

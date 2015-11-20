@@ -17,7 +17,7 @@ public class LevelManager implements UpdateInterface{
 	
 	public LevelManager (Maze m) {
 		this.maze = m;
-		characters = new ArrayList<GameObject>();
+		characters = new ArrayList<>();
 	}
 
 
