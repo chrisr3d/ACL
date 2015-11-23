@@ -2,6 +2,8 @@ package ul.acl.pacman.model;
 
 import org.junit.Test;
 
+import sun.org.mozilla.javascript.internal.EcmaError;
+import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.character.Hero;
 
 import static org.junit.Assert.assertEquals;
@@ -13,42 +15,30 @@ public class TestCharacter {
     public void moveLeft() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.left);
-        assertEquals(h.x(), -1);
+        assertEquals(- Character.getVitesse(), h.x());
     }
 
     @Test
     public void moveRight() throws Exception{
         Hero h = new Hero(0,0);
-        try {
-            h.move(Direction.right);
-        }catch (Exception e){
-
-        }
-        assertEquals(h.x(), 1);
+        h.move(Direction.right);
+        assertEquals(Character.getVitesse(), h.x());
     }
 
 
     @Test
     public void moveUp() throws Exception{
         Hero h = new Hero(0,0);
-        try {
-            h.move(Direction.up);
-        }catch (Exception e){
-
-        }
-        assertEquals(h.y(), -1);
+        h.move(Direction.up);
+        assertEquals(- Character.getVitesse(), h.y());
     }
 
 
     @Test
     public void moveDown() throws Exception{
         Hero h = new Hero(0,0);
-        try {
-            h.move(Direction.down);
-        }catch (Exception e){
-
-        }
-        assertEquals(h.y(), 1);
+        h.move(Direction.down);
+        assertEquals(Character.getVitesse(), h.y());
     }
 
 
@@ -56,75 +46,58 @@ public class TestCharacter {
     @Test
     public void moveLeftNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
-        try {
-            h.move(Direction.left);
-        }catch (Exception e){
-
-        }
-        assertEquals(h.x(), -11);
+        h.move(Direction.left);
+        assertEquals(-10 - Character.getVitesse(), h.x());
     }
 
     @Test
     public void moveRightNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
-        try {
-            h.move(Direction.right);
-        }catch (Exception e){
-
-        }assertEquals(h.x(), -9);
+        h.move(Direction.right);
+        assertEquals(-10 + Character.getVitesse(), h.x());
     }
 
 
     @Test
     public void moveUpNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
-        try {
-            h.move(Direction.up);
-        }catch (Exception e){
-
-        }
-        assertEquals(h.y(), -11);
+        h.move(Direction.up);
+        assertEquals(-10 - Character.getVitesse(), h.y());
     }
 
 
     @Test
     public void moveDownNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
-        try {
-            h.move(Direction.down);
-        }catch (Exception e){
-
-        }assertEquals(h.y(), -9);
+        h.move(Direction.down);
+        assertEquals(-10 + Character.getVitesse(), h.y());
     }
 
 
-    @Test
+    @Test(expected = Exception.class)
     public void moveUpBoundary() throws Exception{
         Hero h = new Hero(0,Integer.MIN_VALUE);
         h.move(Direction.up);
-        assertEquals(h.y(), Integer.MAX_VALUE);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void moveDownBoundary() throws Exception{
         Hero h = new Hero(0,Integer.MAX_VALUE);
         h.move(Direction.down);
-        assertEquals(h.y(), Integer.MIN_VALUE);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void moveLeftBoundary() throws Exception{
         Hero h = new Hero(Integer.MIN_VALUE, 0);
         h.move(Direction.left);
-        assertEquals(h.x(), Integer.MAX_VALUE);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void moveRightBoundary() throws Exception{
         Hero h = new Hero(Integer.MAX_VALUE, 0);
         h.move(Direction.right);
-        assertEquals(h.x(), Integer.MIN_VALUE);
     }
+
 
     @Test (expected=Exception.class)
     public void moveNullValue() throws Exception{
