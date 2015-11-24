@@ -12,8 +12,7 @@ public abstract class Playable extends Character {
 
     @Override
     public void draw(){
-        System.out.println(x + " " + y);
-
+        System.out.println(this.position.x + " " + this.position.y);
     }
 
 

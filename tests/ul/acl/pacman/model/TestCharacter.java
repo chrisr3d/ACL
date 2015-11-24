@@ -15,14 +15,14 @@ public class TestCharacter {
     public void moveLeft() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.left);
-        assertEquals(- Character.getVitesse(), h.x());
+        assertEquals(- Character.getVitesse(), h.position.x);
     }
 
     @Test
     public void moveRight() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.right);
-        assertEquals(Character.getVitesse(), h.x());
+        assertEquals(Character.getVitesse(), h.position.x);
     }
 
 
@@ -30,7 +30,7 @@ public class TestCharacter {
     public void moveUp() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.up);
-        assertEquals(- Character.getVitesse(), h.y());
+        assertEquals(- Character.getVitesse(), h.position.y);
     }
 
 
@@ -38,7 +38,7 @@ public class TestCharacter {
     public void moveDown() throws Exception{
         Hero h = new Hero(0,0);
         h.move(Direction.down);
-        assertEquals(Character.getVitesse(), h.y());
+        assertEquals(Character.getVitesse(), h.position.y);
     }
 
 
@@ -47,14 +47,14 @@ public class TestCharacter {
     public void moveLeftNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         h.move(Direction.left);
-        assertEquals(-10 - Character.getVitesse(), h.x());
+        assertEquals(-10 - Character.getVitesse(), h.position.x);
     }
 
     @Test
     public void moveRightNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         h.move(Direction.right);
-        assertEquals(-10 + Character.getVitesse(), h.x());
+        assertEquals(-10 + Character.getVitesse(), h.position.x);
     }
 
 
@@ -62,7 +62,7 @@ public class TestCharacter {
     public void moveUpNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         h.move(Direction.up);
-        assertEquals(-10 - Character.getVitesse(), h.y());
+        assertEquals(-10 - Character.getVitesse(), h.position.y);
     }
 
 
@@ -70,7 +70,7 @@ public class TestCharacter {
     public void moveDownNegatif() throws Exception{
         Hero h = new Hero(-10,-10);
         h.move(Direction.down);
-        assertEquals(-10 + Character.getVitesse(), h.y());
+        assertEquals(-10 + Character.getVitesse(), h.position.y);
     }
 
 

@@ -18,31 +18,45 @@ public abstract class Character extends GameObject {
         return Character.vitesse;
     }
 
-    public void move(Direction d) throws Exception {
-        switch (d){
+    public Position processMove(Direction direction) throws Exception {
+        Position p = new Position(position);
+
+        switch (direction){
             case left:
-                if(x + vitesse <= Integer.MIN_VALUE + vitesse)
+                if(this.position.x + vitesse <= Integer.MIN_VALUE + vitesse)
                     throw new Exception("wtf");
-                x -= vitesse;
+                p.x -= vitesse;
                 break;
             case right:
-                if(x - vitesse >= Integer.MAX_VALUE - vitesse)
+                if(this.position.x - vitesse >= Integer.MAX_VALUE - vitesse)
                     throw new Exception("wtf");
-                x += vitesse;
+                p.x += vitesse;
                 break;
             case up:
-                if(y + vitesse <= Integer.MIN_VALUE + vitesse)
+                if(this.position.y + vitesse <= Integer.MIN_VALUE + vitesse)
                     throw new Exception("wtf");
-                y -= vitesse;
+                p.y -= vitesse;
                 break;
             case down:
-                if(y - vitesse >= Integer.MAX_VALUE - vitesse)
+                if(this.position.y - vitesse >= Integer.MAX_VALUE - vitesse)
                     throw new Exception("wtf");
-                y += vitesse;
+                p.y += vitesse;
                 break;
             default:
                 throw new Exception("wtf");
         }
+        return p;
     }
 
+    public void move(Direction direction) throws Exception {
+        this.position = processMove(direction);
+    }
+
+    public boolean collision(Direction direction) throws Exception{
+        Position tmpPos = this.processMove(direction);
+        if(tmpPos.x < 0 || tmpPos.x > PacmanPainter.WIDTH - this.width || tmpPos.y < 0 || tmpPos.y > PacmanPainter.HEIGHT - this.height)
+            return false;
+
+        return true;
+    }
 }

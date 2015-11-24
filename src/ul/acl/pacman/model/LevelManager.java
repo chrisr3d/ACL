@@ -9,6 +9,7 @@ import ul.acl.pacman.engine.Game;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 public class LevelManager implements Game{
 	
@@ -20,6 +21,12 @@ public class LevelManager implements Game{
 	
 	protected Maze maze;
 	private Cmd cmd;
+
+	private UpdateVisitor updateVisitor = null;
+
+	public Cmd getCmd() {
+		return this.cmd;
+	}
 	
 	
 	public LevelManager (Maze m, Hero h) {
@@ -49,55 +56,16 @@ public class LevelManager implements Game{
 		maze.draw();
 	}
 
-
-
-	public void updateHero(Hero h) {
-		System.out.println("update hero");
-		try {
-			//String s = b.readLine();
-			Direction d = null;
-			System.out.println(this.cmd);
-			switch (this.cmd){
-				case LEFT:
-					d = Direction.left;
-					break;
-				case RIGHT:
-					d = Direction.right;
-					break;
-				case DOWN:
-					d = Direction.down;
-					break;
-				case UP:
-					d = Direction.up;
-					break;
-			default:
-				break;
-			}
-			if(d != null) {
-				System.out.println("je bouge");
-				h.move(d);
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void updateMaze(Maze m) {
-		// TODO Auto-generated method stub
-	}
-
-
-
 	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
+		if(updateVisitor == null)
+			updateVisitor = new UpdateVisitor();
+
 		System.out.println(userCmd);
 		for(GameObject gO : characters)
-			gO.update(this);
-		maze.update(this);
+			gO.accept(updateVisitor);
+		maze.accept(updateVisitor);
 		
 	}
 

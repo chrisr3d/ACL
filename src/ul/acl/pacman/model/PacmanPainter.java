@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import ul.acl.pacman.engine.GamePainter;
+import ul.acl.pacman.model.character.Hero;
 
 
 /**
@@ -18,8 +19,8 @@ public class PacmanPainter implements GamePainter {
 	/**
 	 * la taille des cases
 	 */
-	protected static final int WIDTH = 1024;
-	protected static final int HEIGHT = 720;
+	public static final int WIDTH = 1024;
+	public static final int HEIGHT = 720;
 
 	/**
 	 * appelle constructeur parent
@@ -37,8 +38,9 @@ public class PacmanPainter implements GamePainter {
 	public void draw(BufferedImage im) {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		crayon.setColor(Color.blue);
-		System.out.println(LevelManager.getInstance().hero.x);
-		crayon.fillOval(LevelManager.getInstance().hero.x,LevelManager.getInstance().hero.y ,10,10);
+		Hero hero = LevelManager.getInstance().hero;
+		System.out.println(hero.position.x);
+		crayon.fillOval(hero.position.x,hero.position.y ,hero.width, hero.height);
 	}
 
 	@Override
