@@ -20,7 +20,7 @@ public class LevelManager implements Game{
 	protected Hero hero;
 	
 	protected Maze maze;
-	private Cmd cmd;
+	public Cmd cmd;
 
 	private UpdateVisitor updateVisitor = null;
 
