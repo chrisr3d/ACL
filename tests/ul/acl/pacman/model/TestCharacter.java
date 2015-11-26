@@ -1,12 +1,8 @@
 package ul.acl.pacman.model;
 
 import org.junit.Test;
-
-import sun.org.mozilla.javascript.internal.EcmaError;
-import ul.acl.pacman.model.Direction;
-import ul.acl.pacman.model.Position;
+import ul.acl.pacman.model.character.*;
 import ul.acl.pacman.model.character.Character;
-import ul.acl.pacman.model.character.Hero;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
