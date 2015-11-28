@@ -1,5 +1,7 @@
 package ul.acl.pacman.engine;
 
+import java.io.IOException;
+
 import javax.swing.JFrame;
 
 import ul.acl.pacman.controller.GameController;
@@ -44,8 +46,9 @@ public class GraphicalInterface  {
 	
 	/**
 	 * mise a jour du dessin
+	 * @throws IOException 
 	 */
-	public void paint() {
+	public void paint() throws IOException {
 		this.panel.drawGame();	
 	}
 	

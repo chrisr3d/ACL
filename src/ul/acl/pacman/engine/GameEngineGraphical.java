@@ -1,5 +1,7 @@
 package ul.acl.pacman.engine;
 
+import java.io.IOException;
+
 import ul.acl.pacman.controller.Cmd;
 import ul.acl.pacman.controller.GameController;
 import ul.acl.pacman.model.LevelManager;
@@ -54,8 +56,9 @@ public class GameEngineGraphical {
 
 	/**
 	 * permet de lancer le game
+	 * @throws IOException 
 	 */
-	public void run() throws InterruptedException {
+	public void run() throws InterruptedException, IOException {
 
 		// creation de l'interface graphique
 		this.gui = new GraphicalInterface(this.gamePainter,this.gameController);

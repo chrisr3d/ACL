@@ -13,8 +13,8 @@ public class Hero extends Playable{
 
     public Hero(int x, int y){
         super(x, y);
-		this.width = 10;
-		this.height = 10;
+		this.width = 25;
+		this.height = 25;
 
     }
 

@@ -2,7 +2,12 @@ package ul.acl.pacman.model;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import ul.acl.pacman.engine.GamePainter;
 import ul.acl.pacman.model.character.Hero;
@@ -33,14 +38,16 @@ public class PacmanPainter implements GamePainter {
 
 	/**
 	 * methode  redefinie de Afficheur retourne une image du jeu
+	 * @throws IOException 
 	 */
 	@Override
-	public void draw(BufferedImage im) {
+	public void draw(BufferedImage im) throws IOException {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		crayon.setColor(Color.blue);
+		Image image = ImageIO.read(new File("resources/icon_lien-web.jpeg"));
 		Hero hero = LevelManager.getInstance().hero;
 		System.out.println(hero.position.x);
-		crayon.fillOval(hero.position.x,hero.position.y ,hero.width, hero.height);
+		crayon.drawImage(image, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
 	}
 
 	@Override
