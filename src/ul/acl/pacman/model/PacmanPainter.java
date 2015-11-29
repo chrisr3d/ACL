@@ -43,7 +43,7 @@ public class PacmanPainter implements GamePainter {
 	@Override
 	public void draw(BufferedImage im) throws IOException {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
-		crayon.setColor(Color.blue);
+		/*crayon.setColor(Color.blue);*/
 		Image image = ImageIO.read(new File("resources/icon_lien-web.jpeg"));
 		Hero hero = LevelManager.getInstance().hero;
 		System.out.println(hero.position.x);
