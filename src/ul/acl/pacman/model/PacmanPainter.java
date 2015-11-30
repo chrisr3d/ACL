@@ -44,7 +44,7 @@ public class PacmanPainter implements GamePainter {
 	public void draw(BufferedImage im) throws IOException {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		/*crayon.setColor(Color.blue);*/
-		Image image = ImageIO.read(new File("resources/icon_lien-web.jpeg"));
+		Image image = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
 		Hero hero = LevelManager.getInstance().hero;
 		System.out.println(hero.position.x);
 		crayon.drawImage(image, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
