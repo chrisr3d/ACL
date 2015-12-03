@@ -16,7 +16,7 @@ public class LevelManager implements Game{
 	
 	public static LevelManager instance = null;
 	
-	protected List<GameObject> characters;
+	protected List<Character> characters;
 	
 	protected Hero hero;
 	
@@ -34,7 +34,7 @@ public class LevelManager implements Game{
 	
 	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
-		characters = new ArrayList<GameObject>();
+		characters = new ArrayList<Character>();
 		this.cmd = null;
 		LevelManager.instance = this;
 		this.hero = h;

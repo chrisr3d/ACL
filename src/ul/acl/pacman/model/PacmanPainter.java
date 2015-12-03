@@ -10,6 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import ul.acl.pacman.engine.GamePainter;
+import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.obstacle.Obstacle;
 
@@ -47,16 +48,16 @@ public class PacmanPainter implements GamePainter {
 		/*crayon.setColor(Color.blue);*/
 		Image imageHero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
 		File f = new File("resources/obstacle.jpg");
-		System.out.println(f);
 		Image imageObstacle = ImageIO.read(f);
 		Hero hero = LevelManager.getInstance().hero;
 		Obstacle obstacle = LevelManager.getInstance().obstacle;
-		System.out.println(hero.position.x);
-		crayon.drawImage(imageHero, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
-		crayon.drawImage(imageObstacle, 100, 100, obstacle.width, obstacle.height, null, null);
-		crayon.drawImage(imageObstacle, 525, 600, obstacle.width, obstacle.height, null, null);
-		crayon.drawImage(imageObstacle, 430, 250, obstacle.width, obstacle.height, null, null);
-		crayon.drawImage(imageObstacle, 900, 350, obstacle.width, obstacle.height, null, null);
+		for(GameObject c : LevelManager.getInstance().characters){
+			crayon.drawImage(c.getImage(), c.position.x, c.position.y, c.width, c.height, null, null);
+		}
+		for(Obstacle c : LevelManager.getInstance().getMaze().obstacles){
+			crayon.drawImage(c.getImage(), c.position.x, c.position.y, c.width, c.height, null, null);
+		}
+
 	}
 
 	@Override

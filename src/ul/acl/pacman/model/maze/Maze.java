@@ -1,7 +1,8 @@
 package ul.acl.pacman.model.maze;
 
+import java.awt.*;
+import java.util.List;
 import java.util.ArrayList;
-
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.PacmanPainter;
@@ -17,21 +18,28 @@ import ul.acl.pacman.model.visitors.UpdateVisitor;
  */
 
 public class Maze extends GameObject{
-	protected ArrayList<Obstacle> obstacles;
+
+
+	public List<Obstacle> obstacles;
 
 	public Maze(int x, int y) {
 		super(x, y);
 		width = PacmanPainter.WIDTH;
 		height = PacmanPainter.HEIGHT;
+		obstacles = new ArrayList<>();
+		obstacles.add(new Obstacle(100, 100));
+		obstacles.add(new Obstacle(525, 600));
+		obstacles.add(new Obstacle(430, 250));
+		obstacles.add(new Obstacle(900, 350));
 	}
 
 	public boolean canMove(Character character, Direction direction) {
 		try {
+			System.out.println(character.position.x + " " + character.position.y);
 			Position p = character.processMove(direction);
 			return !isObstacle(p, character.width, character.height) && ! isOutOfBound(p, character.width, character.height);
 		}
-		catch (Exception e){5
-
+		catch (Exception e){
 			return false;
 		}
 
@@ -44,7 +52,12 @@ public class Maze extends GameObject{
 				|| p.y + height > this.height;
 	}
 	private boolean isObstacle(Position p ,int width,int height){
-		return false;//TODO
+		for(Obstacle o : obstacles){
+			if (o.collideWith(p, width, height)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -52,4 +65,8 @@ public class Maze extends GameObject{
 		visitor.updateMaze(this);
 	}
 
+	@Override
+	public Image getImage(){
+		return null;
+	}
 }

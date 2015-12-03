@@ -22,17 +22,17 @@ public abstract class Character extends GameObject {
 
         switch (direction){
             case left:
-                if(this.position.x + vitesse <= Integer.MIN_VALUE + vitesse)
+                if ( position.x + vitesse <= Integer.MIN_VALUE + vitesse)
                     throw new Exception("wtf");
                 p.x -= vitesse;
                 break;
             case right:
-                if(this.position.x - vitesse >= Integer.MAX_VALUE - vitesse)
+                if ( position.x - vitesse >= Integer.MAX_VALUE - vitesse)
                     throw new Exception("wtf");
                 p.x += vitesse;
                 break;
             case up:
-                if(this.position.y + vitesse <= Integer.MIN_VALUE + vitesse)
+                if ( position.y + vitesse <= Integer.MIN_VALUE + vitesse)
                     throw new Exception("wtf");
                 p.y -= vitesse;
                 break;
