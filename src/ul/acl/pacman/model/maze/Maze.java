@@ -1,5 +1,6 @@
 package ul.acl.pacman.model.maze;
 
+import com.sun.org.apache.regexp.internal.CharacterArrayCharacterIterator;
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
@@ -17,6 +18,11 @@ public class Maze extends GameObject{
 	}
 
 	public boolean canMove(Character charactere, Direction direction) {
+		return true;
+	}
+
+	public boolean endReached(Character character) {
+		
 		return true;
 	}
 
