@@ -15,10 +15,10 @@ import ul.acl.pacman.model.visitors.UpdateVisitor;
 public class LevelManager {
 	
 	public static LevelManager instance = null;
-	
-	protected List<GameObject> characters;
 
 	private Boolean GameEnded = false;
+
+	protected List<Character> characters;
 	
 	public Hero hero;
 	public WayOut wayOut;
@@ -37,7 +37,7 @@ public class LevelManager {
 	
 	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
-		characters = new ArrayList<GameObject>();
+		characters = new ArrayList<Character>();
 		this.cmd = null;
 		LevelManager.instance = this;
 		this.hero = h;

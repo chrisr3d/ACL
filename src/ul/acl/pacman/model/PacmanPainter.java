@@ -10,6 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import ul.acl.pacman.engine.GamePainter;
+import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.obstacle.Obstacle;
 
@@ -56,19 +57,18 @@ public class PacmanPainter implements GamePainter {
 	public void draw(BufferedImage im) throws IOException {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		/*crayon.setColor(Color.blue);*/
+		Image imageHero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
+		File f = new File("resources/obstacle.jpg");
+		Image imageObstacle = ImageIO.read(f);
+		Hero hero = LevelManager.getInstance().hero;
+		Obstacle obstacle = LevelManager.getInstance().obstacle;
+		for(GameObject c : LevelManager.getInstance().characters){
+			crayon.drawImage(c.getImage(), c.position.x, c.position.y, c.width, c.height, null, null);
+		}
+		for(Obstacle c : LevelManager.getInstance().getMaze().obstacles){
+			crayon.drawImage(c.getImage(), c.position.x, c.position.y, c.width, c.height, null, null);
+		}
 
-		System.out.println(this.hero.position.x);
-		try {
-			crayon.drawImage(ImageFactory.getInstance().wayOut, wayOut.position.x, wayOut.position.y,wayOut.width, wayOut.height, null, null);
-			crayon.drawImage(ImageFactory.getInstance().hero, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
-			crayon.drawImage(imageObstacle, 150, 150, obstacle.width, obstacle.height, null, null);
-			crayon.drawImage(imageObstacle, 525, 600, obstacle.width, obstacle.height, null, null);
-			crayon.drawImage(imageObstacle, 430, 250, obstacle.width, obstacle.height, null, null);
-			crayon.drawImage(imageObstacle, 900, 350, obstacle.width, obstacle.height, null, null);
-		}
-		catch (Exception e){
-			System.out.println("CONNARD");
-		}
 	}
 
 	@Override
