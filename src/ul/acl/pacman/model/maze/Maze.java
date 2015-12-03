@@ -63,9 +63,9 @@ public class Maze extends GameObject{
 		WayOut wayOut = LevelManager.getInstance().wayOut;
 
 		return wayOut.position.x <= character.position.x &&
-				wayOut.position.x + wayOut.width >= character.position.y + character.width &&
+				wayOut.position.x + wayOut.width >= character.position.x + character.width &&
 				wayOut.position.y <= character.position.y &&
-				wayOut.position.x + wayOut.width >= character.position.y + character.width;
+				wayOut.position.y + wayOut.width >= character.position.y + character.width;
 	}
 
 	@Override
