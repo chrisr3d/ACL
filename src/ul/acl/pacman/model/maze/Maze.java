@@ -7,9 +7,12 @@ import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.PacmanPainter;
 import ul.acl.pacman.model.Position;
+import ul.acl.pacman.model.*;
 import ul.acl.pacman.model.character.Character;
-import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
+import ul.acl.pacman.model.obstacle.Obstacle;
+
+import java.util.ArrayList;
 
 
 
@@ -58,6 +61,15 @@ public class Maze extends GameObject{
 			}
 		}
 		return false;
+	}
+
+	public boolean endReached(Character character) {
+		WayOut wayOut = LevelManager.getInstance().wayOut;
+
+		return wayOut.position.x <= character.position.x &&
+				wayOut.position.x + wayOut.width >= character.position.y + character.width &&
+				wayOut.position.y <= character.position.y &&
+				wayOut.position.x + wayOut.width >= character.position.y + character.width;
 	}
 
 	@Override

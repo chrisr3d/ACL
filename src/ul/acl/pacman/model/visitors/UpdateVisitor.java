@@ -2,6 +2,7 @@ package ul.acl.pacman.model.visitors;
 
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.WayOut;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
@@ -13,7 +14,7 @@ import ul.acl.pacman.model.obstacle.Obstacle;
  */
 public class UpdateVisitor{
 
-    public UpdateVisitor() {    }
+    public UpdateVisitor() {}
 
     public void updateHero(Hero hero){
         System.out.println("update hero");
@@ -36,10 +37,16 @@ public class UpdateVisitor{
                     break;
             }
             if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {//TODO: sortie d'écran
-                System.out.println("je bouge");
+                System.out.println("je peux bouger");
+                if(LevelManager.getInstance().getMaze().endReached(hero))
+                    System.out.println("c'est gagné");
                 hero.move(d);
             }
 
+    }
+
+    public void visit(WayOut wayOut) {
+        // TODO faire  cette methode
     }
 
     public void updateMaze(Maze m) {

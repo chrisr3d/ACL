@@ -65,8 +65,6 @@ public class GameEngineGraphical {
 
 		// boucle de game
 		while (!this.game.isFinished()) {
-
-			LevelManager l = new LevelManager(new Maze(0,0), new Hero(0,0));
 			while (true){
 				
 				// demande controle utilisateur
@@ -79,7 +77,7 @@ public class GameEngineGraphical {
 				this.gui.paint();
 				// met en attente
 				
-				l.update(c);
+				LevelManager.getInstance().update(c);
 				Thread.sleep(100);
 				
 			}

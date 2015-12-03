@@ -29,13 +29,24 @@ public class PacmanPainter implements GamePainter {
 	public static final int WIDTH = 1024;
 	public static final int HEIGHT = 720;
 
+	Hero hero;
+
+	WayOut wayOut;
+
+	Image imageObstacle;
+
+	Obstacle obstacle;
+
 	/**
 	 * appelle constructeur parent
-	 * 
-	 * @param game
-	 *            le jeutest a afficher
+	 *
 	 */
-	public PacmanPainter() {
+	public PacmanPainter() throws Exception{
+		this.hero = LevelManager.getInstance().hero;
+		this.wayOut = LevelManager.getInstance().wayOut;
+		File f = new File("resources/obstacle.jpg");
+		imageObstacle = ImageIO.read(f);
+		obstacle = LevelManager.getInstance().obstacle;
 	}
 
 	/**

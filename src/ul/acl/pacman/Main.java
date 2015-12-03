@@ -4,8 +4,11 @@ import java.io.IOException;
 
 import ul.acl.pacman.controller.PacmanController;
 import ul.acl.pacman.engine.GameEngineGraphical;
+import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.PacmanGame;
 import ul.acl.pacman.model.PacmanPainter;
+import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.maze.Maze;
 
 public class Main {
 
@@ -35,7 +38,13 @@ public class Main {
 		
 		PacmanGame game = new PacmanGame("helpFilePacman.txt");
 
-		PacmanPainter painter = new PacmanPainter();
+		new LevelManager(new Maze(0,0), new Hero(0,0));
+		PacmanPainter painter=null;
+		try {
+			painter = new PacmanPainter();
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+		}
 		PacmanController controller = new PacmanController();
 
 		// classe qui lance le moteur de jeu generique

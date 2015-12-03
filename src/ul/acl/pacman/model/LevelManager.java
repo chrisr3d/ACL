@@ -18,7 +18,8 @@ public class LevelManager implements Game{
 	
 	protected List<Character> characters;
 	
-	protected Hero hero;
+	public Hero hero;
+	public WayOut wayOut;
 	
 	protected Maze maze;
 	public Cmd cmd;
@@ -39,6 +40,7 @@ public class LevelManager implements Game{
 		LevelManager.instance = this;
 		this.hero = h;
 		characters.add(hero);
+		this.wayOut = new WayOut(100, 100);
 	}
 	
 	public static LevelManager getInstance() {
