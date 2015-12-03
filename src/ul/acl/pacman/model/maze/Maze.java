@@ -24,7 +24,8 @@ public class Maze extends GameObject{
 			Position p = character.processMove(direction);
 			return !isObstacle(p, character.width, character.height) && ! isOutOfBound(p, character.width, character.height);
 		}
-		catch (Exception e){
+		catch (Exception e){5
+
 			return false;
 		}
 
