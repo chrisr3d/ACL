@@ -3,7 +3,9 @@ package ul.acl.pacman.model.maze;
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
+import ul.acl.pacman.model.character.*;
 
 /**
  * Describes the whole maze

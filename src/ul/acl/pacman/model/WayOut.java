@@ -9,6 +9,9 @@ public class WayOut extends GameObject{
 
     public WayOut(int x, int y){
         super(x, y);
+        this.height = 30;
+        this.width = 30;
+
     }
 
 

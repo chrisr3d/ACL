@@ -27,13 +27,17 @@ public class PacmanPainter implements GamePainter {
 	public static final int WIDTH = 1024;
 	public static final int HEIGHT = 720;
 
+	Hero hero;
+
+	WayOut wayOut;
+
 	/**
 	 * appelle constructeur parent
-	 * 
-	 * @param game
-	 *            le jeutest a afficher
+	 *
 	 */
 	public PacmanPainter() {
+		this.hero = LevelManager.getInstance().hero;
+		this.wayOut = LevelManager.getInstance().wayOut;
 	}
 
 	/**
@@ -44,10 +48,15 @@ public class PacmanPainter implements GamePainter {
 	public void draw(BufferedImage im) throws IOException {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		/*crayon.setColor(Color.blue);*/
-		Image image = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
-		Hero hero = LevelManager.getInstance().hero;
-		System.out.println(hero.position.x);
-		crayon.drawImage(image, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
+
+		System.out.println(this.hero.position.x);
+		try {
+			crayon.drawImage(ImageFactory.getInstance().wayOut, wayOut.position.x, wayOut.position.y,wayOut.width, wayOut.height, null, null);
+			crayon.drawImage(ImageFactory.getInstance().hero, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
+		}
+		catch (Exception e){
+			System.out.println("CONNARD");
+		}
 	}
 
 	@Override
