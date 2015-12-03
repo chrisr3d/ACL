@@ -1,6 +1,7 @@
 package ul.acl.pacman.model.character;
 
 import ul.acl.pacman.model.Direction;
+import ul.acl.pacman.model.ImageFactory;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 import javax.imageio.ImageIO;
@@ -25,12 +26,7 @@ public class Hero extends Playable{
 
 	@Override
 	public Image getImage(){
-		try {
-			return ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
-		}
-		catch (Exception e){
-			return null;
-		}
+		return ImageFactory.getInstance().hero;
 	}
 
 }

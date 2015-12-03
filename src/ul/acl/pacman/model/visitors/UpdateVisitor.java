@@ -36,7 +36,7 @@ public class UpdateVisitor{
                 default:
                     break;
             }
-            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {//TODO: sortie d'écran
+            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {
                 System.out.println("je peux bouger");
                 if(LevelManager.getInstance().getMaze().endReached(hero))
                     System.out.println("c'est gagné");

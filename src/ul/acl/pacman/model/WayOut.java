@@ -23,11 +23,6 @@ public class WayOut extends GameObject{
 
     @Override
     public Image getImage(){
-        try {
-            return 	ImageFactory.getInstance().wayOut;
-        } catch (Exception e) {
-            return null;
-        }
-
+        return 	ImageFactory.getInstance().wayOut;
     }
 }

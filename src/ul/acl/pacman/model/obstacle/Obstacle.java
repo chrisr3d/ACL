@@ -1,6 +1,7 @@
 package ul.acl.pacman.model.obstacle;
 
 import ul.acl.pacman.model.GameObject;
+import ul.acl.pacman.model.ImageFactory;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 import javax.imageio.ImageIO;
@@ -21,14 +22,9 @@ public class Obstacle extends GameObject{
 	}
 
 
-	@Override
-	public Image getImage(){
-		try {
-			return ImageIO.read(new File("resources/obstacle.jpg"));
-		}
-		catch (Exception e){
-			return null;
-		}
+		@Override
+		public Image getImage(){
+			return ImageFactory.getInstance().obstacle;
 	}
 
 }

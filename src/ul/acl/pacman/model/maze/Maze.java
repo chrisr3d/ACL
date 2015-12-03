@@ -25,15 +25,11 @@ public class Maze extends GameObject{
 
 	public List<Obstacle> obstacles;
 
-	public Maze(int x, int y) {
-		super(x, y);
+	public Maze() {
+		super(0, 0);
 		width = PacmanPainter.WIDTH;
 		height = PacmanPainter.HEIGHT;
 		obstacles = new ArrayList<>();
-		obstacles.add(new Obstacle(100, 100));
-		obstacles.add(new Obstacle(525, 600));
-		obstacles.add(new Obstacle(430, 250));
-		obstacles.add(new Obstacle(900, 350));
 	}
 
 	public boolean canMove(Character character, Direction direction) {

@@ -10,7 +10,7 @@ import java.io.File;
 public class ImageFactory {
     private static ImageFactory ourInstance = null;
 
-    public static ImageFactory getInstance() throws Exception{
+    public static ImageFactory getInstance(){
         if(ourInstance == null)
             ourInstance = new ImageFactory();
         return ourInstance;
@@ -20,10 +20,14 @@ public class ImageFactory {
     public Image wayOut;
     public Image obstacle;
 
-    private ImageFactory() throws Exception{
-        hero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
-        wayOut = ImageIO.read(new File("resources/door.gif"));
-        obstacle = ImageIO.read(new File("resources/obstacle.jpg"));
+    private ImageFactory(){
+        try {
+            hero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
+            wayOut = ImageIO.read(new File("resources/door.gif"));
+            obstacle = ImageIO.read(new File("resources/obstacle.jpg"));
+        }catch(Exception e){
+            System.out.println("lol");
+        }
     }
 
 
