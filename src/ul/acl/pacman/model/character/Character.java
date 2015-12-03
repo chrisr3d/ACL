@@ -52,11 +52,4 @@ public abstract class Character extends GameObject {
         this.position = processMove(direction);
     }
 
-    public boolean collision(Direction direction) throws Exception{
-        Position tmpPos = this.processMove(direction);
-        if(tmpPos.x < 0 || tmpPos.x > PacmanPainter.WIDTH - this.width || tmpPos.y < 0 || tmpPos.y > PacmanPainter.HEIGHT - this.height)
-            return false;
-
-        return true;
-    }
 }

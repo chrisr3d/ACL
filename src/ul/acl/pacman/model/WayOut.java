@@ -7,8 +7,12 @@ import ul.acl.pacman.model.visitors.UpdateVisitor;
  */
 public class WayOut extends GameObject{
 
+    public WayOut(int x, int y){
+        super(x, y);
+    }
 
-    public void accept(UpdateVisitor v) {
+
+    public void update(UpdateVisitor v) {
         v.visit(this);
     }
 }

@@ -4,7 +4,9 @@ import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.WayOut;
+import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.character.Playable;
 import ul.acl.pacman.model.maze.Maze;
 
 import java.io.IOException;
@@ -13,13 +15,11 @@ import java.util.logging.Level;
 /**
  * Created by Nicolas on 24/11/15.
  */
-public class UpdateVisitor {
-
+public class UpdateVisitor{
 
     public UpdateVisitor() {}
 
-
-    public void visit(Hero hero){
+    public void updateHero(Hero hero){
         System.out.println("update hero");
         try {
             Direction d = null;
@@ -40,7 +40,7 @@ public class UpdateVisitor {
                 default:
                     break;
             }
-            if(d != null && hero.collision(d)) {
+            if(d != null ){//TODO: && hero.collision(d)) {
                 System.out.println("je bouge");
                 hero.move(d);
             }
@@ -52,12 +52,11 @@ public class UpdateVisitor {
         }
     }
 
-    public void visit(Maze m) {
-        System.out.println("fjdklsjfkdsléafjkdlséajfkdlsaéjfklé");
-    }
-
     public void visit(WayOut wayOut) {
         // TODO faire  cette methode
+    }
 
+    public void updateMaze(Maze m) {
+        // TODO
     }
 }

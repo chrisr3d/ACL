@@ -114,6 +114,7 @@ public class TestCharacter {
         methode : Hero.collision()
      */
 
+    /*
     @Test
     public void collisionCorrectPosition() throws Exception{
         Hero h = new Hero(Hero.getVitesse(), Hero.getVitesse());
@@ -162,5 +163,6 @@ public class TestCharacter {
         boolean b = h.collision(Direction.right);
         assertTrue(!b);
     }
+    */
 
 }

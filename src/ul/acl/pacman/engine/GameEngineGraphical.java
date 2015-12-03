@@ -78,7 +78,6 @@ public class GameEngineGraphical {
 				// met en attente
 				
 				l.update(c);
-				l.draw();
 				Thread.sleep(100);
 				
 			}

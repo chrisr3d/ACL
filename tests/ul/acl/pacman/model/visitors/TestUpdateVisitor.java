@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class TestUpdateVisitor {
-
+/*
     @Before
     public void initialize() {
 
@@ -80,5 +80,5 @@ public class TestUpdateVisitor {
 
         assertEquals(5, h.position.y);
     }
-
+*/
 }
