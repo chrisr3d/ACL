@@ -1,12 +1,11 @@
 package ul.acl.pacman.model.visitors;
 
 import ul.acl.pacman.model.Direction;
-import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
-import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.character.Hero;
-import ul.acl.pacman.model.character.Playable;
 import ul.acl.pacman.model.maze.Maze;
+import ul.acl.pacman.model.obstacle.Obstacle;
+
 
 
 /**
@@ -45,5 +44,9 @@ public class UpdateVisitor{
 
     public void updateMaze(Maze m) {
         // TODO
+    }
+    
+    public void updateObstacle(Obstacle o){
+    	
     }
 }

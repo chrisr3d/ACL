@@ -8,6 +8,7 @@ import ul.acl.pacman.controller.Cmd;
 import ul.acl.pacman.engine.Game;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
+import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
@@ -23,6 +24,8 @@ public class LevelManager implements Game{
 	public Cmd cmd;
 
 	private UpdateVisitor updateVisitor = null;
+
+	public Obstacle obstacle = new Obstacle(500, 500);
 
 	public Cmd getCmd() {
 		return this.cmd;

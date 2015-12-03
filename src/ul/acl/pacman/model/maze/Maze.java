@@ -1,17 +1,23 @@
 package ul.acl.pacman.model.maze;
 
+import java.util.ArrayList;
+
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.PacmanPainter;
 import ul.acl.pacman.model.Position;
-import ul.acl.pacman.model.visitors.*;
 import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.obstacle.Obstacle;
+import ul.acl.pacman.model.visitors.UpdateVisitor;
+
 
 
 /**
  * Describes the whole maze
  */
+
 public class Maze extends GameObject{
+	protected ArrayList<Obstacle> obstacles;
 
 	public Maze(int x, int y) {
 		super(x, y);
