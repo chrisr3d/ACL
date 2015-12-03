@@ -17,11 +17,6 @@ public class Maze extends GameObject{
 	}
 
 	@Override
-	public void draw() {
-
-	}
-
-	@Override
 	public void update(UpdateVisitor visitor){
 		visitor.updateMaze(this);
 	}

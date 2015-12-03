@@ -39,7 +39,7 @@ public class UpdateVisitor{
                 default:
                     break;
             }
-            if(d != null && hero.collision(d)) {
+            if(d != null ){//TODO: && hero.collision(d)) {
                 System.out.println("je bouge");
                 hero.move(d);
             }

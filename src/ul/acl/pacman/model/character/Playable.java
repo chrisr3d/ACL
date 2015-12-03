@@ -12,11 +12,5 @@ public abstract class Playable extends Character {
         super(x, y);
     }
 
-    @Override
-    public void draw(){
-        System.out.println(this.position.x + " " + this.position.y);
-    }
-
-
 
 }

@@ -50,17 +50,12 @@ public class LevelManager implements Game{
 		return this.hero;
 	}
 
-	public void draw(){
-		for(GameObject gO : characters)
-			gO.draw();
-		maze.draw();
-	}
 
 	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
 		if(updateVisitor == null) {
-			updateVisitor = new UpdateVisitor(maze);
+			updateVisitor = new UpdateVisitor();
 		}
 		for(GameObject gO : characters) {
 			gO.update(updateVisitor);

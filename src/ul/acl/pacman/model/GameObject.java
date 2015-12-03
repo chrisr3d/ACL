@@ -19,7 +19,6 @@ public abstract class GameObject {
 
     public abstract void update(UpdateVisitor visitor);
 
-    abstract public void draw();
 
 
 }

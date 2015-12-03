@@ -19,9 +19,6 @@ public class Hero extends Playable{
 		visitor.updateHero(this);
 	}
 
-	public boolean collision(Direction direction) throws Exception{
-		return super.collision(direction);
-	}
 
 
 }
