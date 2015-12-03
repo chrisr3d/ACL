@@ -1,9 +1,7 @@
 package ul.acl.pacman.model.obstacle;
 
 import ul.acl.pacman.model.GameObject;
-import ul.acl.pacman.model.Direction;
-import ul.acl.pacman.model.LevelManager;
-import ul.acl.pacman.model.visitors.Visitor;
+import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 public class Obstacle extends GameObject{
 
@@ -14,13 +12,10 @@ public class Obstacle extends GameObject{
 	}
 
 	@Override
-	public void accept(Visitor visitor) {
-		visitor.visit(this);
+	public void update(UpdateVisitor visitor) {
+		visitor.updateObstacle(this);
 	}
 
-	@Override
-	public void draw() {
-		
-	}
+
 
 }

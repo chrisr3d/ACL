@@ -46,7 +46,9 @@ public class PacmanPainter implements GamePainter {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		/*crayon.setColor(Color.blue);*/
 		Image imageHero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
-		Image imageObstacle = ImageIO.read(new File("resources/obstacle.jpg"));
+		File f = new File("resources/obstacle.jpg");
+		System.out.println(f);
+		Image imageObstacle = ImageIO.read(f);
 		Hero hero = LevelManager.getInstance().hero;
 		Obstacle obstacle = LevelManager.getInstance().obstacle;
 		System.out.println(hero.position.x);

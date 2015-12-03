@@ -25,12 +25,12 @@ public class LevelManager implements Game{
 
 	private UpdateVisitor updateVisitor = null;
 
-	public Obstacle obstacle;
+	public Obstacle obstacle = new Obstacle(500, 500);
 
 	public Cmd getCmd() {
 		return this.cmd;
 	}
-	
+	public Maze getMaze(){return maze;}
 	
 	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
@@ -53,22 +53,17 @@ public class LevelManager implements Game{
 		return this.hero;
 	}
 
-	public void draw(){
-		for(GameObject gO : characters)
-			gO.draw();
-		maze.draw();
-	}
 
 	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
-		if(updateVisitor == null)
+		if(updateVisitor == null) {
 			updateVisitor = new UpdateVisitor();
-
-		System.out.println(userCmd);
-		for(GameObject gO : characters)
-			gO.accept(updateVisitor);
-		maze.accept(updateVisitor);
+		}
+		for(GameObject gO : characters) {
+			gO.update(updateVisitor);
+		}
+		maze.update(updateVisitor);
 		
 	}
 
