@@ -27,7 +27,7 @@ public class LevelManager implements Game{
 	public Cmd getCmd() {
 		return this.cmd;
 	}
-	
+	public Maze getMaze(){return maze;}
 	
 	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
@@ -59,13 +59,13 @@ public class LevelManager implements Game{
 	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
-		if(updateVisitor == null)
-			updateVisitor = new UpdateVisitor();
-
-		System.out.println(userCmd);
-		for(GameObject gO : characters)
-			gO.accept(updateVisitor);
-		maze.accept(updateVisitor);
+		if(updateVisitor == null) {
+			updateVisitor = new UpdateVisitor(maze);
+		}
+		for(GameObject gO : characters) {
+			gO.update(updateVisitor);
+		}
+		maze.update(updateVisitor);
 		
 	}
 
