@@ -19,11 +19,12 @@ public class Maze extends GameObject{
 
 	@Override
 	public void draw() {
-		
+
 	}
 
 	@Override
 	public void update(LevelManager levelManager) {
 		levelManager.updateMaze(this);
 	}
+
 }
