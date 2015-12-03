@@ -2,7 +2,7 @@ package ul.acl.pacman.model.visitors;
 
 import org.junit.Before;
 import org.junit.Test;
-import ul.acl.pacman.controller.Cmd;
+//import ul.acl.pacman.controller.Cmd;
 import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.Position;
 import ul.acl.pacman.model.character.Hero;
