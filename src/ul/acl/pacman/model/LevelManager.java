@@ -12,11 +12,13 @@ import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.character.Character;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
-public class LevelManager implements Game{
+public class LevelManager {
 	
 	public static LevelManager instance = null;
 	
 	protected List<GameObject> characters;
+
+	private Boolean GameEnded = false;
 	
 	public Hero hero;
 	public WayOut wayOut;
@@ -55,8 +57,10 @@ public class LevelManager implements Game{
 		return this.hero;
 	}
 
+	public void setGameEnded(Boolean gameEnded) {
+		GameEnded = gameEnded;
+	}
 
-	@Override
 	public void update(Cmd userCmd) {
 		this.cmd = userCmd;
 		if(updateVisitor == null) {
@@ -69,14 +73,10 @@ public class LevelManager implements Game{
 		
 	}
 
-
-
-	@Override
 	public boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.GameEnded;
 	}
-	
-	
+
+
 
 }

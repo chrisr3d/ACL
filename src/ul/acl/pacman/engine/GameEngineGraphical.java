@@ -65,23 +65,21 @@ public class GameEngineGraphical {
 
 		// boucle de game
 		while (!this.game.isFinished()) {
-			while (true){
-				
-				// demande controle utilisateur
-				Cmd c = this.gameController.getCommand();
+			// demande controle utilisateur
+			Cmd c = this.gameController.getCommand();
 
-				// fait evoluer le game
-				this.game.update(c);
+			// fait evoluer le game
+			this.game.update(c);
 
-				// affiche le game
-				this.gui.paint();
-				// met en attente
-				
-				LevelManager.getInstance().update(c);
-				Thread.sleep(100);
-				
-			}
+			// affiche le game
+			this.gui.paint();
+			// met en attente
+
+			LevelManager.getInstance().update(c);
+			Thread.sleep(100);
+
 		}
+		System.out.println("Sortie du Jeu");
 	}
 
 }

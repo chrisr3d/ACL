@@ -38,8 +38,10 @@ public class UpdateVisitor{
             }
             if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {//TODO: sortie d'écran
                 System.out.println("je peux bouger");
-                if(LevelManager.getInstance().getMaze().endReached(hero))
-                    System.out.println("c'est gagné");
+                if(LevelManager.getInstance().getMaze().endReached(hero)){
+                    LevelManager.getInstance().setGameEnded(true);
+                    System.out.println("fjdksahfdjsahfjdkshafjkdlhsjaklfhdjsklahfjdkslahfjdklshafjdklsahfjdkslahfjkdls");
+                }
                 hero.move(d);
             }
 
