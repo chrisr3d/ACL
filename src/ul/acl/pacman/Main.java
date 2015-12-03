@@ -39,8 +39,12 @@ public class Main {
 		PacmanGame game = new PacmanGame("helpFilePacman.txt");
 
 		new LevelManager(new Maze(0,0), new Hero(0,0));
-
-		PacmanPainter painter = new PacmanPainter();
+		PacmanPainter painter=null;
+		try {
+			painter = new PacmanPainter();
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+		}
 		PacmanController controller = new PacmanController();
 
 		// classe qui lance le moteur de jeu generique

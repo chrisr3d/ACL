@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 
 import ul.acl.pacman.engine.GamePainter;
 import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.obstacle.Obstacle;
 
 
 /**
@@ -31,13 +32,20 @@ public class PacmanPainter implements GamePainter {
 
 	WayOut wayOut;
 
+	Image imageObstacle;
+
+	Obstacle obstacle;
+
 	/**
 	 * appelle constructeur parent
 	 *
 	 */
-	public PacmanPainter() {
+	public PacmanPainter() throws Exception{
 		this.hero = LevelManager.getInstance().hero;
 		this.wayOut = LevelManager.getInstance().wayOut;
+		File f = new File("resources/obstacle.jpg");
+		imageObstacle = ImageIO.read(f);
+		obstacle = LevelManager.getInstance().obstacle;
 	}
 
 	/**
@@ -53,6 +61,10 @@ public class PacmanPainter implements GamePainter {
 		try {
 			crayon.drawImage(ImageFactory.getInstance().wayOut, wayOut.position.x, wayOut.position.y,wayOut.width, wayOut.height, null, null);
 			crayon.drawImage(ImageFactory.getInstance().hero, hero.position.x,hero.position.y ,hero.width, hero.height, null, null);
+			crayon.drawImage(imageObstacle, 150, 150, obstacle.width, obstacle.height, null, null);
+			crayon.drawImage(imageObstacle, 525, 600, obstacle.width, obstacle.height, null, null);
+			crayon.drawImage(imageObstacle, 430, 250, obstacle.width, obstacle.height, null, null);
+			crayon.drawImage(imageObstacle, 900, 350, obstacle.width, obstacle.height, null, null);
 		}
 		catch (Exception e){
 			System.out.println("CONNARD");

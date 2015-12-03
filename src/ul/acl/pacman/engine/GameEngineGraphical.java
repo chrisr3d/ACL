@@ -69,8 +69,10 @@ public class GameEngineGraphical {
 				
 				// demande controle utilisateur
 				Cmd c = this.gameController.getCommand();
+
 				// fait evoluer le game
 				this.game.update(c);
+
 				// affiche le game
 				this.gui.paint();
 				// met en attente

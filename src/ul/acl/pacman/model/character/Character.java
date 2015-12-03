@@ -8,15 +8,14 @@ import ul.acl.pacman.model.*;
 public abstract class Character extends GameObject {
 	
 	protected static int vitesse = 10;
-
-    public Character(int x, int y){
-        super(x,y);
-        
-    }
-
     public static int getVitesse() {
         return Character.vitesse;
     }
+
+    public Character(int x, int y){
+        super(x,y);
+    }
+
 
     public Position processMove(Direction direction) throws Exception {
         Position p = new Position(position);
@@ -48,8 +47,13 @@ public abstract class Character extends GameObject {
         return p;
     }
 
-    public void move(Direction direction) throws Exception {
-        this.position = processMove(direction);
+    public void move(Direction direction){
+        try {
+            this.position = processMove(direction);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }
