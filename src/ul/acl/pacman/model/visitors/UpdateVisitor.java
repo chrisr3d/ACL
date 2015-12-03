@@ -8,8 +8,6 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.character.Playable;
 import ul.acl.pacman.model.maze.Maze;
 
-import java.io.IOException;
-import java.util.logging.Level;
 
 /**
  * Created by Nicolas on 24/11/15.
@@ -20,9 +18,8 @@ public class UpdateVisitor{
 
     public void updateHero(Hero hero){
         System.out.println("update hero");
-        try {
+
             Direction d = null;
-            System.out.println(LevelManager.getInstance().getCmd());
             switch (LevelManager.getInstance().getCmd()){
                 case LEFT:
                     d = Direction.left;
@@ -39,16 +36,11 @@ public class UpdateVisitor{
                 default:
                     break;
             }
-            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {
+            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {//TODO: sortie d'écran
                 System.out.println("je bouge");
                 hero.move(d);
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void updateMaze(Maze m) {
