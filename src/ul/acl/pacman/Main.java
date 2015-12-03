@@ -1,5 +1,7 @@
 package ul.acl.pacman;
 
+import java.io.IOException;
+
 import ul.acl.pacman.controller.PacmanController;
 import ul.acl.pacman.engine.GameEngineGraphical;
 import ul.acl.pacman.model.PacmanGame;
@@ -27,8 +29,9 @@ public class Main {
 	/**
 	 * @param args
 	 * @throws InterruptedException 
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		PacmanGame game = new PacmanGame("helpFilePacman.txt");
 

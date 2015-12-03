@@ -3,6 +3,7 @@ package ul.acl.pacman.model.maze;
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.visitors.Visitor;
 
 /**
  * Describes the whole maze
@@ -23,8 +24,8 @@ public class Maze extends GameObject{
 	}
 
 	@Override
-	public void update(LevelManager levelManager) {
-		levelManager.updateMaze(this);
+	public void accept(Visitor visitor){
+		visitor.visit(this);
 	}
 
 }

@@ -15,11 +15,11 @@
    </target>
 	
    <target name="compile" depends="prepare">
-     <javac srcdir="${sourceDir}" destdir="${outputDir}" />
+     <javac srcdir="${sourceDir}" destdir="${outputDir}" includeantruntime="true" />
    </target>
 	
 	<target name="execute" depends="compile">
-		<java classname="ul.acl.pacman.PacmanGame" classpath="./${outputDir}/"/>
+		<java classname="ul.acl.pacman.Main" classpath="./${outputDir}/" fork="true"/>
 	</target>
 	
 </project>

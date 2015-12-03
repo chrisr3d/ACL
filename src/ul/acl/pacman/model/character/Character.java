@@ -14,23 +14,49 @@ public abstract class Character extends GameObject {
         
     }
 
-    public void move(Direction d) throws Exception {
-        switch (d){
+    public static int getVitesse() {
+        return Character.vitesse;
+    }
+
+    public Position processMove(Direction direction) throws Exception {
+        Position p = new Position(position);
+
+        switch (direction){
             case left:
-                x -= vitesse;
+                if(this.position.x + vitesse <= Integer.MIN_VALUE + vitesse)
+                    throw new Exception("wtf");
+                p.x -= vitesse;
                 break;
             case right:
-                x += vitesse;
+                if(this.position.x - vitesse >= Integer.MAX_VALUE - vitesse)
+                    throw new Exception("wtf");
+                p.x += vitesse;
                 break;
             case up:
-                y -= vitesse;
+                if(this.position.y + vitesse <= Integer.MIN_VALUE + vitesse)
+                    throw new Exception("wtf");
+                p.y -= vitesse;
                 break;
             case down:
-                y += vitesse;
+                if(this.position.y - vitesse >= Integer.MAX_VALUE - vitesse)
+                    throw new Exception("wtf");
+                p.y += vitesse;
                 break;
             default:
                 throw new Exception("wtf");
         }
+        return p;
     }
 
+    public void move(Direction direction) throws Exception {
+        this.position = processMove(direction);
+    }
+
+    public boolean collision(Direction direction) throws Exception{
+        Position tmpPos = this.processMove(direction);
+        if(tmpPos.x < 0 || tmpPos.x > PacmanPainter.WIDTH - this.width || tmpPos.y < 0 || tmpPos.y > PacmanPainter.HEIGHT - this.height)
+            return false;
+
+        return true;
+    }
 }

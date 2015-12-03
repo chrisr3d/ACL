@@ -7,6 +7,7 @@ package ul.acl.pacman.engine;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 
@@ -64,8 +65,9 @@ public class DrawingPanel extends JPanel {
 	/**
 	 * demande de mettre a jour le rendu de l'image sur le Panel. Creer une
 	 * nouvelle image vide sur laquelle dessiner
+	 * @throws IOException 
 	 */
-	public void drawGame() {
+	public void drawGame() throws IOException {
 		// generer la nouvelle image
 		this.painter.draw(this.nextImage);
 
