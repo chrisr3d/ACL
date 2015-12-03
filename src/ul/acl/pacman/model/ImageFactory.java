@@ -18,10 +18,12 @@ public class ImageFactory {
 
     public Image hero;
     public Image wayOut;
+    public Image obstacle;
 
     private ImageFactory() throws Exception{
         hero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
         wayOut = ImageIO.read(new File("resources/door.gif"));
+        obstacle = ImageIO.read(new File("resources/obstacle.jpg"));
     }
 
 
