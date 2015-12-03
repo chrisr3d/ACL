@@ -18,7 +18,7 @@ public class Hero extends Playable{
 
     }
 
-	public void accept(Visitor visitor) {
+	public void accept(UpdateVisitor visitor) {
 		visitor.visit(this);
 	}
 

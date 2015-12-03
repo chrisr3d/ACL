@@ -1,5 +1,6 @@
 package ul.acl.pacman.model;
 
+import ul.acl.pacman.model.visitors.UpdateVisitor;
 import ul.acl.pacman.model.visitors.Visitor;
 
 /**
@@ -17,7 +18,7 @@ public abstract class GameObject {
         position = new Position(x, y);
     }
 
-    public abstract void accept(Visitor visitor);
+    public abstract void accept(UpdateVisitor visitor);
 
     abstract public void draw();
 

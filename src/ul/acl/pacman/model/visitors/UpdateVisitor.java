@@ -3,6 +3,7 @@ package ul.acl.pacman.model.visitors;
 import ul.acl.pacman.model.Direction;
 import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
+import ul.acl.pacman.model.WayOut;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 
@@ -12,22 +13,13 @@ import java.util.logging.Level;
 /**
  * Created by Nicolas on 24/11/15.
  */
-public class UpdateVisitor extends Visitor{
+public class UpdateVisitor {
 
 
     public UpdateVisitor() {}
 
-    public void visit( Object o ) {
-        try {
-            getMethod( o.getClass() ).invoke( this, new Object[] { o } );
-        } catch (Exception ex) {
-            System.out.println( "DownVisitor - no appropriate visit() method" );
-        }
-    }
 
-
-
-    public void visitHero(Hero hero){
+    public void visit(Hero hero){
         System.out.println("update hero");
         try {
             Direction d = null;
@@ -60,7 +52,12 @@ public class UpdateVisitor extends Visitor{
         }
     }
 
-    public void visitMaze(Maze m) {
-        // TODO Auto-generated method stub
+    public void visit(Maze m) {
+        System.out.println("fjdklsjfkdsléafjkdlséajfkdlsaéjfklé");
+    }
+
+    public void visit(WayOut wayOut) {
+        // TODO faire  cette methode
+
     }
 }
