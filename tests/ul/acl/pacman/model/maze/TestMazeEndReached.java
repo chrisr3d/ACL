@@ -17,7 +17,7 @@ public class TestMazeEndReached {
 
     @Before
     public void initClass() {
-        new LevelManager(new Maze(0, 0), new Hero(0, 0));
+        new LevelManager(new Maze(), new Hero(0, 0));
     }
 
     @Test
