@@ -22,13 +22,13 @@ public class TestMaze{
     @Test
     public void isOutOfBoundNormal(){
         Maze maze = new Maze();
-        assertTrue(maze.isOutOfBound(new Position(0,10), 100, 100));
+        assertTrue(maze.isOutOfBound(new Position(-1,10), 100, 100));
     }
 
     @Test
     public void isNotOutOfBound(){
         Maze maze = new Maze();
-        assertTrue(maze.isOutOfBound(new Position(100,10), 100, 100));
+        assertTrue(maze.isOutOfBound(new Position(100,10), 99999999, 100));
     }
 
 
