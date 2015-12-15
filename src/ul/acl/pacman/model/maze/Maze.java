@@ -44,7 +44,7 @@ public class Maze extends GameObject{
 
 	}
 
-	private boolean isOutOfBound(Position p, int width, int height){
+	public boolean isOutOfBound(Position p, int width, int height){
 		return 		p.x < 0
 				|| p.x + width > this.width
 				|| p.y < 0
