@@ -2,14 +2,12 @@ LESQUOY Baptiste
 
 STUDER Christian
 
-TOUCHENE Mohamed Amine
-
 WEISSENBACH Nicolas
 
 
 Il y a quelques problemes avec le plugin objectAid : le lien d'héritage n'apparait pas entre "Character" et "Playable".
 
-Utilisation des scripts Ant:
+#Utilisation des scripts Ant:
 
 runProject
 	la target "init" sert a initialiser les variables de chemins vers les differents dossier du projets (bin/, src/)
@@ -28,3 +26,8 @@ runTests
 	
 	pour executer ce script depuis un terminal:
 		ant -buildfile runTests.xml
+		
+#Fonctionnalités implémentées:
+	-déplacement du personnage
+	-les objets du jeu sont représentés par des Sprites
+	-collisions des personnages contre les murs
