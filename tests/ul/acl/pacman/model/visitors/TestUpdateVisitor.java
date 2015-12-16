@@ -9,12 +9,19 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Nicolas on 26/11/15.
  */
 
 public class TestUpdateVisitor {
+
+    @Test
+    public void test() {
+        assertTrue(true);
+    }
+
 /*
     @Before
     public void initialize() {
