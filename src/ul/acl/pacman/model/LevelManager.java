@@ -25,6 +25,7 @@ public class LevelManager {
 	
 	public Hero hero;
 	public WayOut wayOut;
+	public Piege piege;
 	
 	protected Maze maze;
 	public Cmd cmd;
@@ -46,7 +47,8 @@ public class LevelManager {
 		this.hero = h;
 		characters.add(hero);
 		characters.add(new Phantom(20,20));
-		characters.add(new Piege(600, 100));
+		piege = new Piege(600, 100);
+		characters.add(piege);
 		this.wayOut = new WayOut(500, 100);
 		this.characters.add(this.wayOut);
 	}

@@ -40,7 +40,7 @@ public class UpdateVisitor{
                 default:
                     break;
             }
-            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) ) {
+            if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) && !LevelManager.getInstance().piege.collideWith(hero.position, hero.width, hero.width)) {
                 System.out.println("je peux bouger");
                 if(LevelManager.getInstance().getMaze().endReached(hero)){
                     LevelManager.getInstance().setGameEnded(true);
