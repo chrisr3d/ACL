@@ -10,6 +10,9 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
+import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Phantom;
+import ul.acl.pacman.model.obstacle.Piege;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 public class LevelManager {
@@ -44,6 +47,7 @@ public class LevelManager {
 		characters.add(hero);
 		characters.add(new Phantom(20,20));
 		characters.add(new Glue(100, 20));
+		characters.add(new Piege(600, 100));
 		this.wayOut = new WayOut(500, 100);
 		this.characters.add(this.wayOut);
 	}

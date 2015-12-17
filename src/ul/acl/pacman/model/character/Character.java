@@ -59,4 +59,6 @@ public abstract class Character extends GameObject {
         }
     }
 
+    public boolean isHero() {return false;}
+
 }

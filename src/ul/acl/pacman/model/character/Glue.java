@@ -31,6 +31,6 @@ public class Glue extends Enemy{
 
     @Override
     public Image getImage(){
-        return ImageFactory.getInstance().hero;
+        return ImageFactory.getInstance().glue;
     }
 }

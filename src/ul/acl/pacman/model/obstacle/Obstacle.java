@@ -22,9 +22,11 @@ public class Obstacle extends GameObject{
 	}
 
 
-		@Override
-		public Image getImage(){
+	@Override
+	public Image getImage(){
 			return ImageFactory.getInstance().obstacle;
 	}
+
+	public boolean isPiege() {return false;}
 
 }

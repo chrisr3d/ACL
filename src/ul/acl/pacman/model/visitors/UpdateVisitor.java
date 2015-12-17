@@ -14,6 +14,7 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
+import ul.acl.pacman.model.obstacle.Piege;
 
 
 /**
@@ -80,6 +81,7 @@ public class UpdateVisitor{
     public void updatePhantom(Phantom phantom) {
         int nbdire;
         Direction d = phantom.lastDirection;
+
         if(phantom.tempo == 6) {
             Random rn = new Random();
             nbdire= rn.nextInt() % 4;
@@ -100,6 +102,7 @@ public class UpdateVisitor{
                     break;
             }
             phantom.tempo = 0;
+
         }
 
         if((LevelManager.getInstance().getMaze().canMove(phantom, d))) {
@@ -108,4 +111,11 @@ public class UpdateVisitor{
         }
         phantom.tempo ++;
     }
+
+    public void updatePiege (Piege piege) {
+
+    }
+
+
+
 }
