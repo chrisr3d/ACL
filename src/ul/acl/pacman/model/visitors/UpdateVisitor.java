@@ -3,6 +3,10 @@ package ul.acl.pacman.model.visitors;
 import java.util.Random;
 
 import ul.acl.pacman.model.Direction;
+
+import ul.acl.pacman.model.character.Character;
+
+import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.WayOut;
 import ul.acl.pacman.model.character.Glue;
@@ -44,7 +48,7 @@ public class UpdateVisitor{
                 }
                 hero.move(d);
             }
-
+	    hero.direction = d;
     }
 
     public void visit(WayOut wayOut) {
@@ -61,13 +65,13 @@ public class UpdateVisitor{
     
     public void updateGlue(Glue g){
     
-	if(g.toStick != null){
-	  System.out.println("yoloooooooooooo");
+	if(g.toStick != null && g.toStick.direction != null){
+	  g.move(g.toStick.direction);
 	}
 	else{
-	  for(character c : LevelManager.getInstance().characters){
-	    if(g.collideWith(c.position, c.width, c.height){
-	      g.toStick = c;
+	  for(GameObject c : LevelManager.getInstance().characters){
+	    if(c != g && g.collideWith(c.position, c.width, c.height)){
+	      g.toStick = (Character)c;
 	    }
 	  }
 	}

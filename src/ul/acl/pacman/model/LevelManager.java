@@ -18,7 +18,7 @@ public class LevelManager {
 
 	private Boolean GameEnded = false;
 
-	protected List<GameObject> characters;
+	public List<GameObject> characters;
 	
 	public Hero hero;
 	public WayOut wayOut;
