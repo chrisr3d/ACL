@@ -45,7 +45,7 @@ public class LevelManager {
 		this.hero = h;
 		characters.add(hero);
 		characters.add(new Phantom(20,20));
-		this.wayOut = new WayOut(100, 100);
+		this.wayOut = new WayOut(500, 100);
 		this.characters.add(this.wayOut);
 	}
 	

@@ -5,6 +5,7 @@ import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.WayOut;
 import ul.acl.pacman.model.character.Enemy;
 import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
 
@@ -60,10 +61,10 @@ public class UpdateVisitor{
     	
     }
 
-    public void updateEnemy(Enemy enemy) {
+    public void updatePhantom(Phantom phantom) {
         int nbdire;
-        Direction d = enemy.lastDirection;
-        if((enemy.tempo == 6) && (d == null)) {
+        Direction d = phantom.lastDirection;
+        if((phantom.tempo == 6) && (d == null)) {
             Random rn = new Random();
             nbdire= rn.nextInt() % 4;
 
@@ -83,14 +84,14 @@ public class UpdateVisitor{
                 default:
                     break;
             }
-            enemy.tempo = 0;
+            phantom.tempo = 0;
         }
 
-        if((LevelManager.getInstance().getMaze().canMove(enemy, d))) {
-            enemy.move(d);
-            enemy.lastDirection = d;
+        if((LevelManager.getInstance().getMaze().canMove(phantom, d))) {
+            phantom.move(d);
+            phantom.lastDirection = d;
         }
-        System.out.println("fdjksfdskl = " + enemy.tempo);
-        enemy.tempo ++;
+        System.out.println("fdjksfdskl = " + phantom.tempo);
+        phantom.tempo ++;
     }
 }
