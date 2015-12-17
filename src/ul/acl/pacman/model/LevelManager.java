@@ -10,6 +10,7 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 public class LevelManager {
@@ -18,7 +19,7 @@ public class LevelManager {
 
 	private Boolean GameEnded = false;
 
-	protected List<Character> characters;
+	protected List<GameObject> characters;
 	
 	public Hero hero;
 	public WayOut wayOut;
@@ -37,12 +38,14 @@ public class LevelManager {
 	
 	public LevelManager (Maze m, Hero h) {
 		this.maze = m;
-		characters = new ArrayList<Character>();
+		characters = new ArrayList<>();
 		this.cmd = null;
 		LevelManager.instance = this;
 		this.hero = h;
 		characters.add(hero);
+		characters.add(new Phantom(20,20));
 		this.wayOut = new WayOut(100, 100);
+		this.characters.add(this.wayOut);
 	}
 	
 	public static LevelManager getInstance() {
