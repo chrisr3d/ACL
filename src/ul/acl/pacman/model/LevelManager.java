@@ -1,17 +1,15 @@
 package ul.acl.pacman.model;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import ul.acl.pacman.controller.Cmd;
-import ul.acl.pacman.engine.Game;
-import ul.acl.pacman.model.character.Enemy;
+import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Glue;
 import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
-import ul.acl.pacman.model.character.Character;
-import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 public class LevelManager {
@@ -45,6 +43,7 @@ public class LevelManager {
 		this.hero = h;
 		characters.add(hero);
 		characters.add(new Phantom(20,20));
+		characters.add(new Glue(100, 20));
 		this.wayOut = new WayOut(500, 100);
 		this.characters.add(this.wayOut);
 	}

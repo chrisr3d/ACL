@@ -1,12 +1,9 @@
 package ul.acl.pacman.model.character;
 
-import ul.acl.pacman.model.Direction;
+import java.awt.Image;
+
 import ul.acl.pacman.model.ImageFactory;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
-
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.awt.Image;
 
 /**
  * Created by baptiste on 11/11/15.
