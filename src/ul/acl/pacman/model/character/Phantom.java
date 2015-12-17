@@ -23,7 +23,7 @@ public class Phantom extends Enemy{
     @Override
     public Image getImage(){
         try {
-            return ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
+            return ImageIO.read(new File("resources/monster.png"));
         }
         catch (Exception e){
             return null;

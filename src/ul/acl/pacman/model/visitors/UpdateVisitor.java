@@ -64,14 +64,15 @@ public class UpdateVisitor{
     public void updatePhantom(Phantom phantom) {
         int nbdire;
         Direction d = phantom.lastDirection;
+
         boolean boucle;
-        if((phantom.tempo == 6) && (d == null)) {
+        if((phantom.tempo == 6)) {
 
             do {
                 boucle = false;
                 Random rn = new Random();
-                nbdire = rn.nextInt() % 4;
-
+                nbdire= rn.nextInt() % 4;
+                System.out.println("nbdire: " + nbdire);
                 switch (nbdire) {
                     case 0:
                         d = Direction.left;
@@ -86,7 +87,7 @@ public class UpdateVisitor{
                         d = Direction.up;
                         break;
                     default:
-                        boucle = true;
+                        break;
                 }
                 phantom.tempo = 0;
             }while(boucle == true);
