@@ -19,12 +19,14 @@ public class ImageFactory {
     public Image hero;
     public Image wayOut;
     public Image obstacle;
+    public Image monster;
 
     private ImageFactory(){
         try {
             hero = ImageIO.read(new File("resources/Sprite_Link_TMC.gif"));
             wayOut = ImageIO.read(new File("resources/door.gif"));
             obstacle = ImageIO.read(new File("resources/obstacle.jpg"));
+            monster = ImageIO.read(new File("resources/monster.png"));
         }catch(Exception e){
             System.out.println("lol");
         }
