@@ -64,27 +64,32 @@ public class UpdateVisitor{
     public void updatePhantom(Phantom phantom) {
         int nbdire;
         Direction d = phantom.lastDirection;
+        boolean boucle;
         if((phantom.tempo == 6) && (d == null)) {
-            Random rn = new Random();
-            nbdire= rn.nextInt() % 4;
 
-            switch (nbdire) {
-                case 0:
-                    d = Direction.left;
-                    break;
-                case 1:
-                    d = Direction.right;
-                    break;
-                case 2:
-                    d = Direction.down;
-                    break;
-                case 3:
-                    d = Direction.up;
-                    break;
-                default:
-                    break;
-            }
-            phantom.tempo = 0;
+            do {
+                boucle = false;
+                Random rn = new Random();
+                nbdire = rn.nextInt() % 4;
+
+                switch (nbdire) {
+                    case 0:
+                        d = Direction.left;
+                        break;
+                    case 1:
+                        d = Direction.right;
+                        break;
+                    case 2:
+                        d = Direction.down;
+                        break;
+                    case 3:
+                        d = Direction.up;
+                        break;
+                    default:
+                        boucle = true;
+                }
+                phantom.tempo = 0;
+            }while(boucle == true);
         }
 
         if((LevelManager.getInstance().getMaze().canMove(phantom, d))) {
