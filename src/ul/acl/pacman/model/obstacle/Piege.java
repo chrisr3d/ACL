@@ -23,7 +23,7 @@ public class Piege extends Obstacle{
 
     @Override
     public Image getImage() {
-        return ImageFactory.getInstance().monster;
+        return ImageFactory.getInstance().trap;
     }
 
     public boolean isPiege() {return true;}
