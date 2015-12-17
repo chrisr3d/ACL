@@ -29,4 +29,7 @@ public class Hero extends Playable{
 		return ImageFactory.getInstance().hero;
 	}
 
+	@Override
+	public boolean isHero() {return true;}
+
 }

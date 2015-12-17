@@ -1,5 +1,6 @@
 package ul.acl.pacman.model.character;
 
+import ul.acl.pacman.model.ImageFactory;
 import ul.acl.pacman.model.visitors.UpdateVisitor;
 
 import javax.imageio.ImageIO;
@@ -22,11 +23,7 @@ public class Phantom extends Enemy{
 
     @Override
     public Image getImage(){
-        try {
-            return ImageIO.read(new File("resources/monster.png"));
-        }
-        catch (Exception e){
-            return null;
-        }
+
+        return ImageFactory.getInstance().monster;
     }
 }

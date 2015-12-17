@@ -33,10 +33,15 @@ public class Maze extends GameObject{
 	}
 
 	public boolean canMove(Character character, Direction direction) {
+
+		Obstacle ob;
 		try {
 			System.out.println(character.position.x + " " + character.position.y);
 			Position p = character.processMove(direction);
-			return !isObstacle(p, character.width, character.height) && ! isOutOfBound(p, character.width, character.height);
+			ob = isObstacle(p, character.width, character.height);
+			if(ob != null && ob.isPiege())
+				return false;
+			return isObstacle(p, character.width, character.height)==null && ! isOutOfBound(p, character.width, character.height);
 		}
 		catch (Exception e){
 			return false;
@@ -50,13 +55,13 @@ public class Maze extends GameObject{
 				|| p.y < 0
 				|| p.y + height > this.height;
 	}
-	private boolean isObstacle(Position p ,int width,int height){
+	private Obstacle isObstacle(Position p ,int width,int height){
 		for(Obstacle o : obstacles){
 			if (o.collideWith(p, width, height)){
-				return true;
+				return o;
 			}
 		}
-		return false;
+		return null;
 	}
 
 	public boolean endReached(Character character) {

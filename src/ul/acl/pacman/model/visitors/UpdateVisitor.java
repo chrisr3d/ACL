@@ -8,6 +8,7 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
+import ul.acl.pacman.model.obstacle.Piege;
 
 import java.util.Random;
 
@@ -100,4 +101,11 @@ public class UpdateVisitor{
         System.out.println("fdjksfdskl = " + phantom.tempo);
         phantom.tempo ++;
     }
+
+    public void updatePiege (Piege piege) {
+
+    }
+
+
+
 }
