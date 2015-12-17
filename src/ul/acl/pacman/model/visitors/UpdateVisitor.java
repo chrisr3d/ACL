@@ -60,8 +60,16 @@ public class UpdateVisitor{
     }
     
     public void updateGlue(Glue g){
+    
 	if(g.toStick != null){
 	  System.out.println("yoloooooooooooo");
+	}
+	else{
+	  for(character c : LevelManager.getInstance().characters){
+	    if(g.collideWith(c.position, c.width, c.height){
+	      g.toStick = c;
+	    }
+	  }
 	}
     }
     
