@@ -1,16 +1,20 @@
 package ul.acl.pacman.model.visitors;
 
+import java.util.Random;
+
 import ul.acl.pacman.model.Direction;
+
+import ul.acl.pacman.model.character.Character;
+
+import ul.acl.pacman.model.GameObject;
 import ul.acl.pacman.model.LevelManager;
 import ul.acl.pacman.model.WayOut;
-import ul.acl.pacman.model.character.Enemy;
+import ul.acl.pacman.model.character.Glue;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.obstacle.Piege;
-
-import java.util.Random;
 
 
 /**
@@ -21,10 +25,9 @@ public class UpdateVisitor{
     public UpdateVisitor() {}
 
     public void updateHero(Hero hero){
-        System.out.println("update hero");
 
             Direction d = null;
-            switch (LevelManager.getInstance().getCmd()){
+            switch (LevelManager.getInstance().getCmd()) {
                 case LEFT:
                     d = Direction.left;
                     break;
@@ -40,12 +43,15 @@ public class UpdateVisitor{
                 default:
                     break;
             }
+            hero.direction = d;
             if(d != null && LevelManager.getInstance().getMaze().canMove(hero, d) && !LevelManager.getInstance().piege.collideWith(hero.position, hero.width, hero.width)) {
-                System.out.println("je peux bouger");
                 if(LevelManager.getInstance().getMaze().endReached(hero)){
                     LevelManager.getInstance().setGameEnded(true);
                 }
                 hero.move(d);
+            }
+        else{
+                hero.direction=null;
             }
 
     }
@@ -61,44 +67,52 @@ public class UpdateVisitor{
     public void updateObstacle(Obstacle o){
     	
     }
-
+    
+    public void updateGlue(Glue g){
+    
+	if(g.toStick != null && g.toStick.direction != null){
+	  g.move(g.toStick.direction);
+	}
+	else{
+	  for(GameObject c : LevelManager.getInstance().characters){
+	    if(c != g && g.collideWith(c.position, c.width, c.height)){
+	      g.toStick = (Character)c;
+	    }
+	  }
+	}
+    }
+    
     public void updatePhantom(Phantom phantom) {
         int nbdire;
         Direction d = phantom.lastDirection;
 
-        boolean boucle;
-        if((phantom.tempo == 6)) {
+        if(phantom.tempo == 6) {
+            Random rn = new Random();
+            nbdire= rn.nextInt() % 4;
+            switch (nbdire) {
+                case 0:
+                    d = Direction.left;
+                    break;
+                case 1:
+                    d = Direction.right;
+                    break;
+                case 2:
+                    d = Direction.down;
+                    break;
+                case 3:
+                    d = Direction.up;
+                    break;
+                default:
+                    break;
+            }
+            phantom.tempo = 0;
 
-            do {
-                boucle = false;
-                Random rn = new Random();
-                nbdire= rn.nextInt() % 4;
-                System.out.println("nbdire: " + nbdire);
-                switch (nbdire) {
-                    case 0:
-                        d = Direction.left;
-                        break;
-                    case 1:
-                        d = Direction.right;
-                        break;
-                    case 2:
-                        d = Direction.down;
-                        break;
-                    case 3:
-                        d = Direction.up;
-                        break;
-                    default:
-                        break;
-                }
-                phantom.tempo = 0;
-            }while(boucle == true);
         }
 
         if((LevelManager.getInstance().getMaze().canMove(phantom, d))) {
             phantom.move(d);
             phantom.lastDirection = d;
         }
-        System.out.println("fdjksfdskl = " + phantom.tempo);
         phantom.tempo ++;
     }
 

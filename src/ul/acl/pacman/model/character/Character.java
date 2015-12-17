@@ -7,7 +7,9 @@ import ul.acl.pacman.model.*;
  */
 public abstract class Character extends GameObject {
 	
-	protected static int vitesse = 10;
+    protected static int vitesse = 10;
+    protected int life = 3;
+    public Direction direction;
     public static int getVitesse() {
         return Character.vitesse;
     }
@@ -49,6 +51,7 @@ public abstract class Character extends GameObject {
 
     public void move(Direction direction){
         try {
+	    this.direction = direction;
             this.position = processMove(direction);
         }
         catch(Exception e){

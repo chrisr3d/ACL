@@ -1,13 +1,13 @@
 package ul.acl.pacman.model;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import ul.acl.pacman.controller.Cmd;
-import ul.acl.pacman.engine.Game;
-import ul.acl.pacman.model.character.Enemy;
+import ul.acl.pacman.model.character.Character;
+import ul.acl.pacman.model.character.Glue;
 import ul.acl.pacman.model.character.Hero;
+import ul.acl.pacman.model.character.Phantom;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
 import ul.acl.pacman.model.character.Character;
@@ -21,7 +21,7 @@ public class LevelManager {
 
 	private Boolean GameEnded = false;
 
-	protected List<GameObject> characters;
+	public List<GameObject> characters;
 	
 	public Hero hero;
 	public WayOut wayOut;
@@ -49,6 +49,8 @@ public class LevelManager {
 		characters.add(new Phantom(20,20));
 		piege = new Piege(600, 100);
 		characters.add(piege);
+		characters.add(new Glue(100, 20));
+		characters.add(new Piege(600, 100));
 		this.wayOut = new WayOut(500, 100);
 		this.characters.add(this.wayOut);
 	}
