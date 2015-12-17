@@ -31,7 +31,7 @@ public class TestMaze{
         assertTrue(maze.isOutOfBound(new Position(100,10), 99999999, 100));
     }
 
-
+/*
     @Test
     public void isNotOutOfBoundBoundary(){
         Maze maze = new Maze();
@@ -48,6 +48,6 @@ public class TestMaze{
         //canMove(Character character, Direction direction) {
     }
 
-
+*/
 }
 

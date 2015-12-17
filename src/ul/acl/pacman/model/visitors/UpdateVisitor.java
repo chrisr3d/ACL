@@ -8,6 +8,7 @@ import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
 
+import java.util.Random;
 
 
 /**
@@ -60,6 +61,36 @@ public class UpdateVisitor{
     }
 
     public void updateEnemy(Enemy enemy) {
+        int nbdire;
+        Direction d = enemy.lastDirection;
+        if((enemy.tempo == 6) && (d == null)) {
+            Random rn = new Random();
+            nbdire= rn.nextInt() % 4;
 
+            switch (nbdire) {
+                case 0:
+                    d = Direction.left;
+                    break;
+                case 1:
+                    d = Direction.right;
+                    break;
+                case 2:
+                    d = Direction.down;
+                    break;
+                case 3:
+                    d = Direction.up;
+                    break;
+                default:
+                    break;
+            }
+            enemy.tempo = 0;
+        }
+
+        if((LevelManager.getInstance().getMaze().canMove(enemy, d))) {
+            enemy.move(d);
+            enemy.lastDirection = d;
+        }
+        System.out.println("fdjksfdskl = " + enemy.tempo);
+        enemy.tempo ++;
     }
 }

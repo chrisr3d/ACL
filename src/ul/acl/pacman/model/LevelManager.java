@@ -6,6 +6,7 @@ import java.util.List;
 
 import ul.acl.pacman.controller.Cmd;
 import ul.acl.pacman.engine.Game;
+import ul.acl.pacman.model.character.Enemy;
 import ul.acl.pacman.model.character.Hero;
 import ul.acl.pacman.model.maze.Maze;
 import ul.acl.pacman.model.obstacle.Obstacle;
@@ -42,7 +43,8 @@ public class LevelManager {
 		LevelManager.instance = this;
 		this.hero = h;
 		characters.add(hero);
-		this.wayOut = new WayOut(100, 100);
+		this.wayOut = new WayOut(400, 800);
+		characters.add(new Enemy(50, 50));
 	}
 	
 	public static LevelManager getInstance() {

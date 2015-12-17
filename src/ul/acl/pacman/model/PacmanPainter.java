@@ -68,7 +68,7 @@ public class PacmanPainter implements GamePainter {
 		for(Obstacle c : LevelManager.getInstance().getMaze().obstacles){
 			crayon.drawImage(c.getImage(), c.position.x, c.position.y, c.width, c.height, null, null);
 		}
-
+		crayon.drawImage(LevelManager.getInstance().wayOut.getImage(), LevelManager.getInstance().wayOut.position.x, LevelManager.getInstance().wayOut.position.y, 32, 32, null, null);
 	}
 
 	@Override
