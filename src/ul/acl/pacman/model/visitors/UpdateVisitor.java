@@ -64,10 +64,10 @@ public class UpdateVisitor{
     public void updatePhantom(Phantom phantom) {
         int nbdire;
         Direction d = phantom.lastDirection;
-        if((phantom.tempo == 6) && (d == null)) {
+        if(phantom.tempo == 6) {
             Random rn = new Random();
             nbdire= rn.nextInt() % 4;
-
+    System.out.println("nbdire: " + nbdire);
             switch (nbdire) {
                 case 0:
                     d = Direction.left;
